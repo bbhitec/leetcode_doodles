@@ -1,21 +1,26 @@
 '''
- [mst] fizzbuzz1.py simple fizzbuzz in python3
- fizzbuzz demonstrates a simple conditional flow
- and can use dictionaries\hashtables optimization
- 
- log:
- -2021.12: -initial draft
- -2021.12: adjusted for leetcode question 412:
-    Input: n = 15
-    Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
-    1 <= n <= 104
+[mst] fizzbuzz1.py
+simple fizzbuzz in python3
+
+fizzbuzz demonstrates a simple conditional flow
+and can use dictionaries\hashtables optimization
+
+log:
+-2021.12: -initial draft
+-2021.12: adjusted for leetcode question 412:
+   Input: n = 15
+   Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
+   1 <= n <= 104
 -2021.12.12: improved with a dictionary for cleaner multiple mappings
 
 @author: mst
 '''
 
-# [demo] shows the way to encapsulate the main logic in OOP manner, as a method
 class Solution (object):
+    """
+    [demo] shows the way to encapsulate the main logic in OOP manner, as a method
+    """
+
     def fizzBuzz(self,n):
         """
         :type n: int
@@ -33,9 +38,13 @@ class Solution (object):
                 res.append(str(i))
         return (res)
 
-# what if we had to pront Puzz for all 7 divisibles? The naive version would have tonns of conditions.
-# Therefore, we have the classificatioin approach: for each divisor, we add a key to a hash map
+
 class Solution2 (object):
+    """
+    what if we had to pront Puzz for all 7 divisibles? The naive version would
+    have tonns of conditions. Therefore, we have the classificatioin approach:
+    for each divisor, we add a key to a hash map
+    """
     def fizzBuzz(self,n):
         res = []
 
@@ -44,7 +53,7 @@ class Solution2 (object):
 
         for i in range (1 , n+1):
 
-            #reset the result striing
+            #reset the result string for each num
             res_str = ''
 
             # if 'i' is divisible by 'key', replace with mapped string
@@ -62,7 +71,7 @@ class Solution2 (object):
 
 ################## DRIVER
 def main ():
-    print ("[mst] fizzbuzz1")
+    print ("[mst] fizzbuzz1 (leetcode 412)")
 
     sol1 = Solution()
     print(sol1.fizzBuzz(15))
@@ -71,12 +80,6 @@ def main ():
     sol2 = Solution2()
     print(sol2.fizzBuzz(22))
 
-
-
-
-# [mst][demo] this is a check for running via command line
-# the __name__ parameter will hold the invoking method,
-# which is set to __main__ when the app is run directly
 if __name__ == ("__main__"):
     main()
 
