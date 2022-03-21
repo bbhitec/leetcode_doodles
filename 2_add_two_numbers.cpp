@@ -1,5 +1,5 @@
 /**
- * [here] [wip] have all this shit cleaned up and sexy-sorted: new cpp template
+ * [here][wip] have all this shit cleaned up and sexy-sorted: new cpp template
  * leetcode solution and a general linked list doodle
  * 
  * 
