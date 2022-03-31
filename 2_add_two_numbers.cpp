@@ -2,9 +2,7 @@
  * [here][wip] have all this shit cleaned up and sexy-sorted: new cpp template
  * leetcode solution and a general linked list doodle
  * 
- * 
- [mst] <filename>.<extension> title
- description
+
 
  [mst] 2_add_two_numbers.cpp
  leetcode problems series
