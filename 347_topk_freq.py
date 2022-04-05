@@ -21,21 +21,26 @@ k is in the range [1, the number of unique elements in the array].
 It is guaranteed that the answer is unique.
 
 gains:
--dictionaries: key/value orientation, sorting and using for lists
+- dictionaries: key/value orientation, sorting and using lists, some bucket sort
 
 log:
+- 2022.04.05: snipped solution: https://youtu.be/YPTqKIgVk-k 46.02% t 6.97% s
+- 2022.04.03: initial attempt
 - 2022.03.31: created
 
 @author: mst
 """
 
-class Solution(object):
+class Solution0(object):
     def topKFrequent(self, nums, k):
         """
         :type nums: List[int]
         :type k: int
         :rtype: List[int]
-        returns the k most frequent elements in a given list
+        returns the k most frequent elements in a given list.
+        initial idea: count frequencies of all members, sort and return most
+        frequent since its not bound, we cannot guarantee O(n).
+        Also, the lambda expression doesn't seem to work in leetcode :(
         """
 
         # frequency dictionary in format: {key: nums member, value: appearances}
@@ -49,11 +54,52 @@ class Solution(object):
 
         # sort by values so the k first members are the most frequent
         sortedout = {key: val for key, val in sorted(count_dict.items(), key = lambda ele: ele[1], reverse = True)}
-        #sortedout = sorted(count_dict.items(), key=lambda x:x[1])
-        #sortedoutdict = dict(sortedout)
 
         res = list(sortedout)[0:k]
         return res
+
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        returns the k most frequent elements in a given list.
+        smart keying: use count (frequency) as a bucket, wil a size bound to 
+        len(nums), since its the maximum occurences (all nums are the same).
+        hence O(n) time. then, just pick the last members for an answer
+        """
+
+        # key: number of occurences, value: list of corresponding members
+        count_dict = {}
+
+        # index i holds i-frequent member of nums
+        freqs = [[] for i in range(len(nums) +1 )]
+        
+
+        # count the occurences
+        for num in nums:
+            if num in count_dict:
+                count_dict[num] = count_dict[num] + 1
+            else:
+                count_dict[num] = 1 # else - add element (not the diff) to hash
+        
+        # build the buckets: freq[coun] = list of corresponding members
+        for n, c in count_dict.items():
+            #print (f"{n=},{c=}")
+            freqs[c].append(n)
+
+        res = []
+
+        # [demo] run loop from end to start with an index
+        for i in range(len(freqs)-1, 0, -1):
+            for member in freqs[i]:
+                res.append(member)
+
+                # at some point we will reach k elements (bound by freqs size)
+                if len(res) == k:
+                    return res
+
 
 
 
@@ -61,43 +107,35 @@ class Solution(object):
 def main():
     print ("[mst] leetcode 347. Top K Frequent Elements")
 
-    s = Solution()
+    '''
+    s0 = Solution0()
 
     # Example 1:
     # Input: nums = [1,1,1,2,2,3], k = 2
     # Output: [1,2]
-    '''nums = [1,1,1,2,2,3]
+    nums = [1,1,1,2,2,3]
     k = 2
-    result = s.topKFrequent(nums,k)
+    result = s0.topKFrequent(nums,k)
     print (f'test: {nums=}, {k=}, {result=}')
-    '''
-
+    
 
     nums = [1,1,1,2,2,2,2,2,3,3,3,3,3,3,3,3,3]
     k = 2
+    result = s0.topKFrequent(nums,k)
+    print (f'test: {nums=}, {k=}, {result=}')
+    '''
+    
+    s = Solution()
+    nums = [1,1,1,2,2,3]
+    k = 2
     result = s.topKFrequent(nums,k)
     print (f'test: {nums=}, {k=}, {result=}')
-    
-    '''
-    sum = 8
-    arr = [1, 4, 11, 15,4]
-    print ("looking for sum:", sum, "in", arr, "naive")
-    start = time.perf_counter()
-    print(s.twoSumNaive(arr, sum))
-    print (f'naive task ran for {time.perf_counter()-start}')
 
+    nums = [1,1,1,2,2,2,2,2,3,3,3,3,3]
+    k = 2
+    result = s.topKFrequent(nums,k)
+    print (f'test: {nums=}, {k=}, {result=}')
 
-    print ("looking for sum:", sum, "in", arr, "hash version")
-    start = time.perf_counter()
-    print(s.twoSum(arr, sum))
-    print (f'hash task ran for {time.perf_counter()-start}')
-
-    sum = 9
-    arr = [2,7,11,15]
-    print ("looking for sum:", sum, "in", arr, "hash version")
-    print(s.twoSum(arr, sum))
-
-    '''
     
 
 # [mst][demo] this is a check for running via command line
