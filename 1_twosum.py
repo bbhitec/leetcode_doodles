@@ -1,4 +1,6 @@
-""" [mst] 1_twosum.py 
+#!/usr/bin/env python
+"""
+[mst] 1_twosum.py 
 leetcode problems series
 
   1. Two Sum
@@ -13,6 +15,7 @@ log:
  - 2022.01: played with naive implementetion, re-solved
  - initial hash-based solution (I think I've copied it from somewhere)
 
+@author: mst
 """
 import time
 
