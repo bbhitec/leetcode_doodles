@@ -21,12 +21,12 @@ k is in the range [1, the number of unique elements in the array].
 It is guaranteed that the answer is unique.
 
 gains:
-- dictionaries: key/value orientation, sorting and using lists, some bucket sort
+-dictionaries: key/value orientation, sorting and using lists, some bucket sort
 
 log:
-- 2022.04.05: snipped solution: https://youtu.be/YPTqKIgVk-k 46.02% t 6.97% s
-- 2022.04.03: initial attempt
-- 2022.03.31: created
+-2022.04.05: snipped solution: https://youtu.be/YPTqKIgVk-k 46.02% t 6.97% s
+-2022.04.03: initial attempt
+-2022.03.31: created
 
 @author: mst
 """
@@ -65,7 +65,7 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         returns the k most frequent elements in a given list.
-        smart keying: use count (frequency) as a bucket, wil a size bound to 
+        smart keying: use count (frequency) as a bucket, with a size bound to 
         len(nums), since its the maximum occurences (all nums are the same).
         hence O(n) time. then, just pick the last members for an answer
         """

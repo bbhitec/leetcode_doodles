@@ -12,8 +12,9 @@ leetcode problems series
   Because nums[0] + nums[1] = 2 + 7 = 9,
   return[0, 1].
 log:
- - 2022.01: played with naive implementetion, re-solved
- - initial hash-based solution (I think I've copied it from somewhere)
+-2022.04 [wip]
+-2022.01: played with naive implementetion, re-solved
+-initial hash-based solution (I think I've copied it from somewhere)
 
 @author: mst
 """

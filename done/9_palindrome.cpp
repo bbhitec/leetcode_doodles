@@ -1,4 +1,4 @@
-/*
+/**
 [mst] 9_palindrome.cpp
 leetcode problems series
 
@@ -7,6 +7,7 @@ leetcode problems series
 	Follow up: Could you solve it without converting the integer to a string?
 
 features, changelog:
+
     @author [mst]
     @version 0.1
 */

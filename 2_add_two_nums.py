@@ -1,4 +1,5 @@
-'''
+#!/usr/bin/env python
+"""
  [mst] 2_add_two_nums
  leetcode problems series
 
@@ -9,14 +10,15 @@
  except the number 0 itself.
 
  log:
+ -2022.04 [wip]
+
  -2021.01: -initial draft
            -another item
  -2020.12: [wip] indicate miscompletion
 
 Created on Jan 11, 2021
-@author: mst
-'''
-
+    @author: mst
+"""
 
 ## Definition for singly-linked list.
 # class ListNode(object):

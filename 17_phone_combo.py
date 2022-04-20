@@ -1,4 +1,5 @@
-'''
+#!/usr/bin/env python
+"""
  [mst] 17_phone_combo.py 
  leetcode problems series
     17. Letter Combinations of a Phone Number
@@ -11,17 +12,17 @@
     Input: digits = "23"
     Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
  log
- - initial
- - 2021.01: -used an iterating ASCII index for digit mapping.
-             instead, add a hash set to streamline digit-to-letter mapping
-            -up-leveled some  class members to omit the 'self' directive
- - [wip] iterative solution is using two cases, where the combinations list
-    is empty and one where it is populated. combine this
- - [wip] run a recursive solution option?
+ -initial
+ -2021.01: -used an iterating ASCII index for digit mapping.
+            instead, add a hash set to streamline digit-to-letter mapping
+           -up-leveled some  class members to omit the 'self' directive
+ -[wip] iterative solution is using two cases, where the combinations list
+   is empty and one where it is populated. combine this
+ -[wip] run a recursive solution option?
 
 Created on Jan 11, 2021
-@author: mst
-'''
+    @author: mst
+"""
 
 # my first solution
 class Solution(object):
