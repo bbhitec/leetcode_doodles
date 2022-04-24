@@ -1,33 +1,43 @@
-﻿//
-// [mst] 8_atoi.cpp
-// leetcode problems series
-// 
-// 8. String to Integer(atoi)
-// Implement atoi which converts a string to an integer.
-// 
-// The function first discards as many whitespace characters as necessary until the first non - whitespace character is found.Then, starting from this character takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.
-// The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.
-// If the first sequence of non - whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.
-// If no valid conversion could be performed, a zero value is returned.
-// 
-// Note:
-// -Only the space character ' ' is considered a whitespace character.
-// - Assume we are dealing with an environment that could only store integers within the 32 - bit signed integer range : [−231, 231 − 1].If the numerical value is out of the range of representable values, INT_MAX(231 − 1) or INT_MIN(−231) is returned.
-//
-// features, changelog:
-// -initial
-//
-//
+﻿/**
+    @author [mst] 
+    @file   8_atoi.cpp
+    @brief  leetcode problems series
+
+	8. String to Integer(atoi)
+	Implement atoi which converts a string to a 32-bit signed integer.
+
+	The function first discards as many whitespace characters as necessary until the first non - whitespace character is found.
+	Then, starting from this character takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.
+	The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.
+	If the first sequence of non - whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.
+	If no valid conversion could be performed, a zero value is returned.
+
+	[mst] it is a problem mostly to emphasize taking care of inputs, not much on algorithmic solution
+
+	Note:
+	- Only the space character ' ' is considered a whitespace character
+	- Clamp the result integers within the 32 - bit signed integer range : [−2^31, 2^31 − 1]
+	- 0 <= s.length <= 200
+
+	features, changelog:
+    -2022.04: resubmission
+    -2021.01: -initial draft
+
+    @author [mst]
+    @version 0.2 2022.04
+*/
 
 
 ////////////////// LIBS
 #include <iostream>            // usage of console prints
 #include <vector>
 #include <string>
+
 using namespace std;
 
+
 ////////////////// DECL_IMPL
-class Solution {
+class Solution1 {
 public:
 	int myAtoi(string s) {
 		int i = 0;
@@ -77,6 +87,60 @@ public:
 	}
 };
 
+
+class Solution {	
+public:
+	int myAtoi(string s) {
+		int len 		= s.length();
+		int i 			= 0;
+		long long res 	= 0;		// initialize the result
+		int sign 		= 1;		// result def is positive
+
+		// skip leading whitespaces
+		// this stands with the case of an empty string or a spaces only string
+		while (s[i] == ' ') {
+			i++;
+		}
+
+		// handle negative sign (only in the beginning of the number)
+		if (s[i] == '-') {
+			sign = -1;
+			i++;
+		} else	// allow only one sign char
+		if (s[i] == '+') {
+			i++;
+		}
+
+
+
+		while (i < len ) {	// watch that end of string
+			switch (s[i]) {
+			case '0': case '1': case '2': case '3': case '4':
+			case '5': case '6': case '7': case '8': case '9':
+				res = res * 10 + s[i] - '0';
+				//cout << "char: " << s[i] << " res: " << res << endl;
+
+				// trim if INT_MAX overflown
+				if (res > INT_MAX) {// + (1 * neg))){
+					return (sign) ? INT_MIN : INT_MAX;
+				}
+				break;
+
+			case '+': case '-': 	// error or nullifying chars
+				return 0;
+				break;
+
+			default:
+				return res * sign;	// exit loop on any other char
+				break;	
+			}
+			i++;
+		}
+		
+		return res*sign;
+	}	// eo: myAtoi
+};
+
 ////////////////// DRIVER
 int main()
 {
@@ -84,51 +148,23 @@ int main()
 
 	//SolutionLeet sol;
 	Solution sol;
-	string strs[] = {
-		"42",
-		"   -42",
-		"4193 with words",
-		"words and 987",
-		"-91283472332",
-		"+1",
-		"+-12",
-		"00000-42a1234" };
+	string inputs[] = {
+		// "42",
+		// "   -42",
+		// "4193 with words",
+		// "words and 987",
+		// "-91283472332",
+		// "+1",
+		// "+-12",
+		// "00000-42a1234",
+		"-+12",
+		"21474836460",
+	};
 
-	for (string str : strs) {
+	for (string str : inputs) {
 		std::cout << "atoi(" << str << ")" << "=" << sol.myAtoi(str) << endl;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-	//string str0 = "42";
-	//string str1 = "   -42";
-	//string str2 = "4193 with words";
-	//string str3 = "words and 987";
-	//string str4 = "-91283472332";
-	//string str5 = "+1";
-	//string str6 = "+-12";
-	//string str6 = "+-12";
-	//
-	//cout << "atoi(" << str0 << ")" << "=" << sol.myAtoi(str0) << endl;
-	//cout << "atoi(" << str1 << ")" << "=" << sol.myAtoi(str1) << endl;
-	//cout << "atoi(" << str2 << ")" << "=" << sol.myAtoi(str2) << endl;
-	//cout << "atoi(" << str3 << ")" << "=" << sol.myAtoi(str3) << endl;
-	//cout << "atoi(" << str4 << ")" << "=" << sol.myAtoi(str4) << endl;
-	//cout << "atoi(" << str5 << ")" << "=" << sol.myAtoi(str5) << endl;
-	//cout << "atoi(" << str6 << ")" << "=" << sol.myAtoi(str6) << endl;
-	//cout << "atoi(" << str6 << ")" << "=" << sol.myAtoi(str6) << endl;
-
-	// system("pause");    // [mst][demo] this is not portable!!
-	std::cin.get(); // pseudo-pause the console
+	//std::cin.get(); // pseudo-pause the console
 	return 0;
 }

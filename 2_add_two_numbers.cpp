@@ -40,9 +40,7 @@ void printList (ListNode* head) {
 
 // list push helper function
 void pushList(ListNode* &head, int val) {
-    //if (head == nulptr) { // [wip] unnecessary check?
-    //    return
-    //}
+    // [bp] this will still work with an empty list case
     ListNode* NewNode = new ListNode(val, head);
     head = NewNode;
 }
