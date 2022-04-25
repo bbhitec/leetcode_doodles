@@ -33,7 +33,8 @@ void ListNode::printList() {
 }
 
 // [demo] externally define a class method
-ListNode::ListNode(int x, ListNode *next): val(x), next(next) {}
+ListNode::ListNode(int x, ListNode *next): 
+    val(x), next(next) {}
 
 
 ////////////////// DECL_IMPL

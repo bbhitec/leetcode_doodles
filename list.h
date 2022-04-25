@@ -24,8 +24,8 @@ public:
     ListNode *next;
 
     // constructors
-    ListNode() : val(0), next(nullptr) {}      // default empty constructor
-    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode() : val(0), next(nullptr) {}       // default empty constructor
+    ListNode(int x) : val(x), next(nullptr) {}  // [demo] initializing constructor
     ListNode(int x, ListNode *next);
 
     // methods

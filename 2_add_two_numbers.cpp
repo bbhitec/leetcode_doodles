@@ -116,7 +116,7 @@ int main()
     cout << "[mst] 2_add_two_numbers doodle" << '\n' << '\n';
     Solution sol1;
 
-/*
+
     //////////////////////////////////////////
     // Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
     // Output: [8,9,9,9,0,0,0,1]
@@ -139,7 +139,7 @@ int main()
     printList(l6);
     printList(sol1.addTwoNumbers(l5,l6));
 
-
+/*
     //////////////////////////////////////////
     // Input: l1 = [0], l2 = [0]
     // Output: [0]
@@ -150,6 +150,8 @@ int main()
     printList(l4);
     printList(sol1.addTwoNumbers(l3,l4));
 */
+
+/*
     //////////////////////////////////////////
     //Input: l1 = [2,4,3], l2 = [5,6,4]
     //Output: [7,0,8]
@@ -174,11 +176,11 @@ int main()
     //printList(l1);
     //printList(l2);
     // [here]
-    l1->printList();
+    //l1->printList();
     //l2->printList();
-    //printList(sol1.addTwoNumbers(l1,l2));
+    printList(sol1.addTwoNumbers(l1,l2));
 
-
+*/
 
 
 	//cin.get(); // pseudo-pause the console
