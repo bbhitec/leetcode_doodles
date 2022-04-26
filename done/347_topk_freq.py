@@ -20,8 +20,10 @@ Constraints:
 k is in the range [1, the number of unique elements in the array].
 It is guaranteed that the answer is unique.
 
-gains:
--dictionaries: key/value orientation, sorting and using lists, some bucket sort
+Gains:
+- python dictionaries: key/value orientation
+- sorting and using lists
+- algorithm: bucket sort variation
 
 log:
 -2022.04.05: snipped solution: https://youtu.be/YPTqKIgVk-k 46.02% t 6.97% s

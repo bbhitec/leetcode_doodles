@@ -11,6 +11,12 @@ leetcode problems series
   Given nums = [2, 7, 11, 15], target = 9,        
   Because nums[0] + nums[1] = 2 + 7 = 9,
   return[0, 1].
+
+gains:
+-python dictionaries/hastables
+-dictionaries/hastables key-value handling
+-performance optimizations
+
 log:
 -2022.04 [wip]
 -2022.01: played with naive implementetion, re-solved

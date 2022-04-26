@@ -5,6 +5,10 @@ simple fizzbuzz in python3
 fizzbuzz demonstrates a simple conditional flow
 and can use dictionaries\hashtables optimization
 
+gains:
+- conditional operation
+- python dictionaries
+
 log:
 -2021.12: -initial draft
 -2021.12: adjusted for leetcode question 412:

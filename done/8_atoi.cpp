@@ -12,12 +12,14 @@
 	If the first sequence of non - whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.
 	If no valid conversion could be performed, a zero value is returned.
 
-	[mst] a problem mostly to emphasize taking care of inputs, not much on algorithmic solution
-
 	Note:
 	- Only the space character ' ' is considered a whitespace character
 	- Clamp the result integers within the 32 - bit signed integer range : [−2^31, 2^31 − 1]
 	- 0 <= s.length <= 200
+
+	Gains:
+	- text processing
+	- special cases treatment
 
 	features, changelog:
     -2022.04: resubmission: T: 6 ms, faster than 37.32% S: 7 MB, less than 89.92%

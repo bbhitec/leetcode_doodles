@@ -10,6 +10,10 @@
  except the number 0 itself.
  tip for different length lists: https://www.youtube.com/shorts/_1Epl1HdrMI
 
+ Gains:
+ - python lists traversal
+
+
  log:
  -2022.04 tinketed version. not submitted. used plain python lists
     [wip] a good excersize could be solving with comprehensions
