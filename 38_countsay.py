@@ -22,8 +22,8 @@
 
 '''
 
-class Solution(object):
-    
+'''
+class Solution(object):    
     def say(self, sequence):
         s = str(sequence)
         res = []
@@ -52,12 +52,39 @@ class Solution(object):
         res = self.say(prev)
         
         return res
+'''
+
+class Solution2:
+    def countAndSay(self, n: int) -> str:
+        if n == 1:
+            return "1"
+        
+        return self.say(self.countAndSay(n-1))
+        
+        
+    
+    def say(self, s: str) -> str:
+        N = len(s)
+        cur, count = s[0], 1
+        res = []
+        for i in range(1, N):
+            if s[i] == cur:
+                count += 1
+            else:
+                res.append(str(count))
+                res.append(cur)
+                count = 1
+                cur = s[i]
+        res.append(str(count))
+        res.append(cur)
+        return ''.join(res)
+        
 
 # driver
 def main():
     print ("[mst] leetcode 38. Count and Say")
  
-    s = Solution()
+    s = Solution2()
     n = 3
     print(s.countAndSay(n))
 
