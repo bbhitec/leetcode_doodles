@@ -5,6 +5,7 @@ Various solutions and exercises for leetcode interview prep problems<br>
 
 #### Methodology and Mindset
 - Don't invest too much or too little in each problem
+- Always dial back to easy problems to build confidence and momentum
 - Use pen/paper first, paint a naive solution and advance in the best plausible direction
 - Develop both methodical and technical aspects: don't leave the code minimal or dirty
 - Don't overthink, just start
