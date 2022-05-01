@@ -12,16 +12,15 @@ Various solutions and exercises for leetcode interview prep problems<br>
 
 
 ## WIP
-[ ] normalize documentation/comments/structure
 [ ] filter miscompleted apps
-[ ] cpp: use of makefiles and dynamic/static includes
+
 <br><br>
 
 ## Gains
 - Methodical: Algirithms implementation, Problem solving
 - Technical: Best practices and familiarity towards the used languages: Python, Cpp
 ### Other Gains
-- Documentation
+- Documentation, consistent commenting
 - Code running time measurement
 ### Skills stack
 ![python](https://img.shields.io/badge/python-v3-yellow)

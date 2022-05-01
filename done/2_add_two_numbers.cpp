@@ -11,9 +11,12 @@
     the number 0 itself.
     https://leetcode.com/problems/add-two-numbers/
 
+    Gains:
+    -cpp lists operation
+
     features, changelog:
-    -2022.04 [wip] explode to external files correctly
-    -2022.01.27: -initial draft, accepted with 58.99% faster 91.74% less memory
+    -2022.04 [wip] explode to external files correctly?
+    -2022.01.27: -initial draft, iterative solution accepted with 58.99% faster 91.74% less memory
 
     @author [mst]
     @version 0.1 2022.01.27
@@ -21,14 +24,31 @@
 
 ////////////////// LIBS
 #include <iostream>         // usage of console prints
-#include "list.h"           // custom linked lists implementation
+
+// [bp] we use minimal helper methods for lists operations.
+// a proper way would be to eport those to a dedicated app and inclue with a header
+//#include "list.h"           // custom linked lists implementation
 
 
-//  [here] HELPER METHODS: these are here for access, should be
-//  properly included and incapsulated in the linked list lib
-//
+////////////////// DECL_IMPL
+
+// Definition for singly-linked list.
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
+
 // print a list helper method
 void printList (ListNode* head) {
+    if (head == nullptr) {
+        std::cout << "empty list" << std::endl;
+        return;
+    }
+
     ListNode* lp = head;
     while (lp) {
         std::cout << lp->val << ',';
@@ -47,7 +67,7 @@ void pushList(ListNode* &head, int val) {
 
 // list end insertion helper function
 void addTailList(ListNode* &head, int val) {
-    //if (head == nulptr) { // [wip] unnecessary check?
+    //if (head == nulptr) { // [demo] unnecessary check
     //    return
     //}
     ListNode* NewNode = new ListNode(val, nullptr);
@@ -64,9 +84,9 @@ void addTailList(ListNode* &head, int val) {
 }
 
 
-
 class Solution {
 public:
+    // straightforward iterative solution
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         ListNode* res = nullptr;    // this will also work if the given lists are empty
         int add = 0;
@@ -97,8 +117,7 @@ public:
         }
 
         // dont forget the carry
-        if (carry)
-            addTailList(res, carry); 
+        if (carry) addTailList(res, carry); 
 
         return res;
     }
@@ -115,6 +134,7 @@ int main()
     // [bp] using endl would force a flush.                            
     cout << "[mst] 2_add_two_numbers doodle" << '\n' << '\n';
     Solution sol1;
+
 
 
     //////////////////////////////////////////
@@ -135,54 +155,38 @@ int main()
     addTailList (l6,9);
     addTailList (l6,9);  
     
+    // [bp] again, encapsulating prints would be better for a proper package
+    //l1->printList();
+    //l2->printList();
     printList(l5);
     printList(l6);
     printList(sol1.addTwoNumbers(l5,l6));
 
-/*
+
+
     //////////////////////////////////////////
     // Input: l1 = [0], l2 = [0]
     // Output: [0]
-
+    cout << endl;
     ListNode* l3 = new ListNode(0);
     ListNode* l4 = new ListNode(0);
     printList(l3);
     printList(l4);
     printList(sol1.addTwoNumbers(l3,l4));
-*/
 
-/*
+
+
     //////////////////////////////////////////
     //Input: l1 = [2,4,3], l2 = [5,6,4]
     //Output: [7,0,8]
     //Explanation: 342 + 465 = 807
-
+    cout << endl;
     // pre-build lists [wip] make builder function?
     ListNode* l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
-    //ListNode* l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
-
-    // ListNode* l2 = new ListNode(4);
-    // pushList(l2,6);
-    // pushList(l2,5);
-
-    ListNode* l2 = new ListNode(5);
-    addTailList (l2,6);
-    addTailList (l2,4);
-
-    //{2};
-    //l1.next = new ListNode(4);
-    //l1.next->next = new ListNode(3);    
-
-    //printList(l1);
-    //printList(l2);
-    // [here]
-    //l1->printList();
-    //l2->printList();
+    ListNode* l2 = new ListNode(5, new ListNode(6, new ListNode(4)));   
+    printList(l1);
+    printList(l2);
     printList(sol1.addTwoNumbers(l1,l2));
 
-*/
-
-
-	//cin.get(); // pseudo-pause the console
 	return 0;
 }
