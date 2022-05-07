@@ -9,6 +9,7 @@ Various solutions and exercises for leetcode interview prep problems<br>
 - Use pen/paper first, paint a naive solution and advance in the best plausible direction
 - Develop both methodical and technical aspects: don't leave the code minimal or dirty
 - Don't overthink, just start
+- When learning a new language, go over some easy/familiar problems
 
 
 ## WIP
@@ -17,7 +18,7 @@ Various solutions and exercises for leetcode interview prep problems<br>
 <br><br>
 
 ## Gains
-- Methodical: Algirithms implementation, Problem solving
+- Methodical: Algorithms implementation, Problem solving
 - Technical: Best practices and familiarity towards the used languages: Python, Cpp
 ### Other Gains
 - Documentation, consistent commenting

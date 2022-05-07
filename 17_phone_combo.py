@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 """
  [mst] 17_phone_combo.py 
  leetcode problems series

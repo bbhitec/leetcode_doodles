@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+##!/usr/bin/env python
 """
 [mst] 1_twosum.py 
 leetcode problems series
