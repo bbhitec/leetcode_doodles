@@ -1,28 +1,32 @@
-//
-// [mst] 226_invert_binary_tree.cpp
-// leetcode problems series
-// 226. Invert Binary Tree
-//
-// Example: 
-// Input : 
-//     4
-//    /  \
-// 	 2    7
-// 	/ \  / \
-// 1   3 6  9
-// Output: 
-// 	   4
-// 	  / \
-// 	 7    2
-//  / \  / \
-// 9   6 3  1
-//
-// features, changelog:
-// -2021.01: -initial draft
-//			 -recursive solution submission
-//           -[wip] rd tree struct proper implementation
-//			 -[wip] fancy tree print
-// 
+/*
+[mst] 226_invert_binary_tree.cpp
+leetcode problems series
+
+226. Invert Binary Tree
+Example: 
+Input : 
+    4
+  /  \
+ 2    7
+/ \  / \
+1   3 6  9
+Output: 
+    4
+   / \
+  7    2
+ / \  / \
+9   6 3  1
+
+Gains:
+-Binary trees behaviour
+-Recursive aproach cpp
+
+features, changelog:
+-2021.01: -initial draft
+		  -recursive solution submission
+          -[wip] rd tree struct proper implementation
+		  -[wip] fancy tree print
+*/ 
 
 
 ////////////////// LIBS
