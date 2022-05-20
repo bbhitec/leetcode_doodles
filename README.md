@@ -16,7 +16,7 @@ Various solutions and exercises for leetcode interview prep problems<br>
 [ ] filter miscompleted apps
 
 ### Repo condition
-![medium](https://img.shields.io/badge/medium%20clean-70%-yellow)
+![medium](https://img.shields.io/badge/medium&nbsp;clean-70-yellow)
 
 <br><br>
 
