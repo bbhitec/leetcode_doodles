@@ -15,6 +15,9 @@ Various solutions and exercises for leetcode interview prep problems<br>
 ## WIP
 [ ] filter miscompleted apps
 
+### Repo condition
+![medium](https://img.shields.io/badge/medium%20clean-70%-yellow)
+
 <br><br>
 
 ## Gains
@@ -36,3 +39,5 @@ In case of any dependencies, pull and<br>Install the required Python packages li
 ```
 pip install -r requirements.txt
 ```
+
+
