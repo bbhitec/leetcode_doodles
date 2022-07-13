@@ -30,8 +30,9 @@
 
 
 ////////////////// LIBS
-#include <iostream>            // usage of console prints
-#include <string> // for string class
+#include <iostream> // usage of console prints
+#include <string>   // for string class
+#include <vector>   // imitate a stack
 
 using namespace std;
 
@@ -39,7 +40,15 @@ using namespace std;
 class Solution {
 public:
     string convert(string s, int numRows) {    
+        vector<vector<char>> stack1;
         string res;
+
+        for (char c : s) {
+            cout << c;
+        }
+        cout << '\n';
+
+
 
         return res;    
     }
