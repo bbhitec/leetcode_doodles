@@ -18,7 +18,6 @@ gains:
 -performance optimizations
 
 log:
--2022.04 [wip]
 -2022.01: played with naive implementetion, re-solved
 -initial hash-based solution (I think I've copied it from somewhere)
 
@@ -71,7 +70,7 @@ class Solution(object):
                 return [diff_hash[diff], i] # if yes - return indices
             diff_hash[vali] = i # else - add element (not the diff) to hash   
         
-        # case of no match found?  (not required since every input has a solution)
+        # case of no match found? (not required since every input has a solution)
 
 # driver
 def main():

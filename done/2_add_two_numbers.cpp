@@ -15,7 +15,7 @@
     -cpp lists operation
 
     features, changelog:
-    -2022.04 [wip] explode to external files correctly?
+    -2022.04 [wip] explode to external files (linked list implementation) correctly?
     -2022.01.27: -initial draft, iterative solution accepted with 58.99% faster 91.74% less memory
 
     @author [mst]
