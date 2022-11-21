@@ -24,23 +24,15 @@ Gains:
 features, changelog:
 -2021.01: -initial draft
 		  -recursive solution submission
-          -[wip] rd tree struct proper implementation
-		  -[wip] fancy tree print
 */ 
 
 
 ////////////////// LIBS
 #include <iostream>            // usage of console prints
-
 using namespace std;
 
+
 ////////////////// DECL_IMPL
-
-
-// [wip] rd tree structure: proper implementations
-class Node {
-
-};
 
 class TreeNode {
 private:
@@ -49,12 +41,6 @@ public:
 	int val;
 	TreeNode *left;
 	TreeNode *right;
-	// [demo][wip] various constructor syntaxes?
-	//TreeNode(){
-	//	val = 0;
-	//	left = nullptr;
-	//	right = nullptr;
-	//}
 	TreeNode() : val(-1), left(nullptr), right(nullptr){}	// here invalid value is -1
 	TreeNode(int x) : val(x), left(nullptr), right(nullptr){}
 	TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right){}
@@ -126,7 +112,7 @@ int main()
 	tree1.insert(6);
 	tree1.insert(9);
 	cout << "inputting: [4,2,7,1,3,6,9]" << endl;
-	tree1.printInOrder();	// [wip] i want a sexy tree-like print!
+	tree1.printInOrder();
 
 	cout << "inverting..." << endl;
 	Solution sol;
