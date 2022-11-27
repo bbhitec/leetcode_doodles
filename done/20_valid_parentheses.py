@@ -53,7 +53,7 @@ class Solution:
             return True
         return False
 
-# solution from leetcode. same ide cleaner syntax 25% time 72% space
+# solution from leetcode. same idea wiht cleaner syntax 25% time 72% space
 # I think the condition to pop is saving resources
 class Solution2:
     def isValid(self, s: str) -> bool:
