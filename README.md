@@ -12,13 +12,9 @@ Various solutions and exercises for leetcode interview prep problems<br>
 - When learning a new language, go over some easy/familiar problems
 
 
-## WIP
-[ ] filter miscompleted apps
-
 ### Repo condition
 ![medium](https://img.shields.io/badge/medium&nbsp;clean-70-yellow)
 
-<br><br>
 
 ## Gains
 - Methodical: Algorithms implementation, Problem solving
