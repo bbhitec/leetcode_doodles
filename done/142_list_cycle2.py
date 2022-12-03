@@ -11,6 +11,11 @@
     next pointer is connected to (0-indexed). It is -1 if there is no cycle.
     Note that pos is not passed as a parameter.
 
+    gains:
+    -cycle algorithmic solving
+    -sliding window technique
+    -cycle case prep
+
     features, changelog:
     -2022.11: -submission
 
@@ -84,32 +89,36 @@ class Solution2:
         return None
 
 
-# simple sliding-window solution
+# simple sliding-window solution:
+# we first run a slow and a fast pointers to detect a cycle
+# note: any None (nullptr) reference would mean an end of a list and so a lack of a cycle
+# once the cycle node is spotted, we run a pointer out of a head of the list to spot the cycle entry
+# 63% T 61 S
 class Solution:
     def detectCycle(self, head: ListNode) -> ListNode:
         if head is None:
             return None
         
-        p = head
-        p2 = head
+        slow = head
+        fast = head
+        entry = head
         i = 0
 
-        while (p is not None) and (p2 is not None):
-            if p.next:
-                p = p.next
+        while (slow is not None) and (fast is not None):
+            if slow.next:
+                slow = slow.next
             else:
                 return None
-            if p2.next and p2.next.next:
-                p2 = p2.next.next
+            if fast.next and fast.next.next:
+                fast = fast.next.next
             else:
                 return None
-            # i = i + 1
-            if p == p2:
-                while p2.next != p:
-                    p2 = p2.next
+            if slow == fast:
+                while slow != entry:
+                    slow = slow.next
+                    entry = entry.next
                     i = i + 1
                 return i
-
 
         return None
 

@@ -13,7 +13,7 @@ Various solutions and exercises for leetcode interview prep problems<br>
 
 
 ### Repo condition
-![medium](https://img.shields.io/badge/medium&nbsp;clean-70-yellow)
+![medium](https://img.shields.io/badge/medium&nbsp;clean-80-orange)
 
 
 ## Gains
