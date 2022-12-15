@@ -23,7 +23,7 @@
     @version 0.1 2022.12
 '''
 
-# DFS recursive approach: recurse over all valid (adjacent, same color)
+# Recursive approach: recurse over all valid (adjacent, same color)
 # neighbors while coloring the tile if needed
 # 
 # sub: 92%T 66%T

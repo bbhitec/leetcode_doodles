@@ -6,14 +6,14 @@ Use a dictionary to hold the histogram where key is char and value is the number
 
 # Complexity
 - Time complexity:
-    - Char appearance histogram: O(n)
-    - Sort the histogram by values: O(n*log(n))
-    - built she resulting string: O(n)
+        - Char appearance histogram: O(n)
+        - Sort the histogram by values: O(n*log(n))
+        - built she resulting string: O(n)
 
 - Space complexity:
-    - O(a) to keep character appearances counts (a is alphabet size)
-    - O(n) to sort the histogram
-    - O(n) to build the result string
+        - O(a) to keep character appearances counts (a is alphabet size)
+        - O(n) to sort the histogram
+        - O(n) to build the result string
 - At time of submission: 66% Time, 49% Space ratings
 
 # Code
