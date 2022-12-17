@@ -52,8 +52,7 @@ class Solution:
 
 
         # copy result to needed destination
-        for i, n in enumerate(nums):
-            nums1[i] = n
+        nums1 = nums
 
         print(f"{nums=}")
 
