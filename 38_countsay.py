@@ -27,8 +27,9 @@ log:
 
 '''
 
+
 '''
-class Solution(object):
+class Solution0(object):
     # [wip] my initial solution
     def say(self, sequence):
         s = str(sequence)
@@ -60,7 +61,7 @@ class Solution(object):
         return res
 '''
 
-class Solution2:
+class Solution:
     '''
     snipped from discussion section
     '''
@@ -71,10 +72,9 @@ class Solution2:
         return self.say(self.countAndSay(n-1))        
     
     def say(self, s: str) -> str:
-        N = len(s)
         cur, count = s[0], 1
         res = []
-        for i in range(1, N):
+        for i in range(1, len(s)):
             if s[i] == cur:
                 count += 1
             else:
@@ -91,8 +91,8 @@ class Solution2:
 def main():
     print ("[mst] leetcode 38. Count and Say")
  
-    s = Solution2()
-    n = 3
+    s = Solution()
+    n = 4
     print(s.countAndSay(n))
 
 # [mst][demo] this is a check for running via command line

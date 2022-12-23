@@ -20,8 +20,8 @@
 '''
 
 
-# build a buccket histogram of appearances of each letter, then
-# every odd count ands 1 palindrome length
+# build a bucket histogram of appearances of each letter, then
+# every odd count adds 1 palindrome length
 # every even part in count adds two logest palindrome options
 # sub: 13% S 22% T
 class Solution:
@@ -51,7 +51,7 @@ class Solution:
 
 
 # snipped solution, two liner: 66%T 22%S
-class Solution:
+class Solution0:
     def longestPalindrome(self, s):
         c = collections.Counter(s)
         return sum(v - 1 * (v % 2 != 0) for v in c.values()) + 1 * any(v % 2 != 0 for v in c.values())

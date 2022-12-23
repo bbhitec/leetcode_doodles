@@ -25,7 +25,7 @@ using namespace std;
 
 ////////////////// DECL_IMPL
 
-// simple recursive solution'
+// simple recursive solution
 //
 // sub: 34%T 79%S
 // same solution in py3: 27$T 96%S, with lru_cache: 31%T 55%S
