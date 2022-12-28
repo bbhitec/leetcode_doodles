@@ -51,21 +51,45 @@ def list_comprehensions():
 def runner_up():
     # n = int(input())
     # arr = map(int, input().split())
-
-
     arr = [2,3,6,6,5]
-    maximal = 0
-    runner_up = 0
 
-    for num in arr:
-        if num > maximal: maximal = num
-        
-    for num in arr:
-        if (num < maximal):
-            if (num > runner_up):
-                runner_up = num
+    # make a set to remove dupes
+    # turn back to list
+    # sort it
+    # take the pre-last member
+    print(sorted(list(set(arr)))[-2])
 
-    print(runner_up)
+def nested_lists():
+
+    students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
+    scores = {}
+    for n in students:
+        scores[n[1]] = n[0]
+
+    # res = {key: val for key, val in sorted(scores.items(), key = lambda ele: ele[1])}
+    # res = {key: val for key, val in sorted(scores.items(), key = lambda ele: ele[1])}
+    # print (res)
+
+    # students = []
+    # for _ in range(int(input())):
+    #     name = input()
+    #     score = float(input())
+    #     students.append([name,score])
+    minimal = 100
+    for i in range(len(students)):
+        if minimal > float(students[i][1]):
+            minimal = float(students[i][1])
+    runner = 100
+    for i in range(len(students)):
+        if float(students[i][1]) > float(minimal) and runner > float(students[i][1]):
+            runner = float(students[i][1])
+    runner_arr = []
+    for i in range(len(students)):
+        if float(students[i][1]) == float(runner):
+            runner_arr.append(students[i][0])
+    runner_arr = sorted(runner_arr)
+    for i in range(len(runner_arr)):
+        print(runner_arr[i])
 
 
     
@@ -77,9 +101,10 @@ def main():
     print ("[mst] hackerrank doodle")
     # challenge2()
     # is_leap()
-    #list_comprehensions()
+    # list_comprehensions()
+    # runner_up()
 
-    runner_up()
+    nested_lists()
     
     
 
