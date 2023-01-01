@@ -1,11 +1,9 @@
 '''
- [mst] <filename>.<extension> title
  description
 
  log:
  -2021.01: -initial draft
            -another item
- -2020.12: [wip] indicate miscompletion
 
 Created on Jan 11, 2021
 @author: mst
@@ -46,7 +44,6 @@ class Solution(object):
 
 ################## DRIVER
 def main():
-    print ("[mst] leetcode 200. Number of Islands")
     
     sol = Solution()
 

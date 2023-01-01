@@ -7,6 +7,7 @@
     Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 
     gains:
+    -dp, memoization
 
     features, changelog:
     -2022.11: -submission
@@ -24,7 +25,7 @@ import time
 # sub: 95%T 57%S
 class Solution:
     def climbStairs(self, n: int) -> int:
-
+        
         memo = {1:1,2:2}
 
         for i in range(3,n+1):
