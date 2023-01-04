@@ -1,0 +1,148 @@
+LeetCode 75
+This study plan is for those who want to prepare for technical interviews but are uncertain which problems they should focus on. The problems have been carefully curated so that levels 1 and 2 will guide ...Expand
+Day 1
+1480. Running Sum of 1d Array
+724. Find Pivot Index
+Day 2
+205. Isomorphic Strings
+392. Is Subsequence
+Day 3
+21. Merge Two Sorted Lists
+206. Reverse Linked List
+Day 4
+876. Middle of the Linked List
+142. Linked List Cycle II
+Day 5
+121. Best Time to Buy and Sell Stock
+409. Longest Palindrome
+Day 6
+589. N-ary Tree Preorder Traversal
+102. Binary Tree Level Order Traversal
+Day 7
+704. Binary Search
+278. First Bad Version
+Day 8
+98. Validate Binary Search Tree
+235. Lowest Common Ancestor of a Binary Search Tree
+Day 9
+733. Flood Fill
+200. Number of Islands
+Day 10
+509. Fibonacci Number
+70. Climbing Stairs
+Day 11
+746. Min Cost Climbing Stairs
+62. Unique Paths
+Day 12
+438. Find All Anagrams in a String
+424. Longest Repeating Character Replacement
+Day 13
+1. Two Sum
+299. Bulls and Cows
+Day 14
+844. Backspace String Compare
+394. Decode String
+Day 15
+1046. Last Stone Weight
+692. Top K Frequent Words
+___
+
+
+Data Structure
+Day 1
+217. Contains Duplicate
+53. Maximum Subarray
+Day 2
+1. Two Sum
+88. Merge Sorted Array
+Day 3
+350. Intersection of Two Arrays II
+121. Best Time to Buy and Sell Stock
+Day 4
+566. Reshape the Matrix
+118. Pascal's Triangle
+Day 5
+36. Valid Sudoku
+74. Search a 2D Matrix
+Day 6
+387. First Unique Character in a String
+383. Ransom Note
+242. Valid Anagram
+Day 7
+141. Linked List Cycle
+21. Merge Two Sorted Lists
+203. Remove Linked List Elements
+Day 8
+206. Reverse Linked List
+83. Remove Duplicates from Sorted List
+Day 9
+20. Valid Parentheses
+232. Implement Queue using Stacks
+Day 10
+144. Binary Tree Preorder Traversal
+94. Binary Tree Inorder Traversal
+145. Binary Tree Postorder Traversal
+Day 11
+102. Binary Tree Level Order Traversal
+104. Maximum Depth of Binary Tree
+101. Symmetric Tree
+Day 12
+226. Invert Binary Tree
+112. Path Sum
+Day 13
+700. Search in a Binary Search Tree
+701. Insert into a Binary Search Tree
+Day 14
+98. Validate Binary Search Tree
+653. Two Sum IV - Input is a BST
+235. Lowest Common Ancestor of a Binary Search Tree
+____
+
+
+Programming Skills
+Day 1
+1523. Count Odd Numbers in an Interval Range
+1491. Average Salary Excluding the Minimum and Maximum Salary
+Day 2
+191. Number of 1 Bits
+1281. Subtract the Product and Sum of Digits of an Integer
+Day 3
+976. Largest Perimeter Triangle
+1779. Find Nearest Point That Has the Same X or Y Coordinate
+Day 4
+1822. Sign of the Product of an Array
+1502. Can Make Arithmetic Progression From Sequence
+202. Happy Number
+1790. Check if One String Swap Can Make Strings Equal
+Day 5
+589. N-ary Tree Preorder Traversal
+496. Next Greater Element I
+1232. Check If It Is a Straight Line
+Day 6
+1588. Sum of All Odd Length Subarrays
+283. Move Zeroes
+1672. Richest Customer Wealth
+Day 7
+1572. Matrix Diagonal Sum
+566. Reshape the Matrix
+Day 8
+1768. Merge Strings Alternately
+1678. Goal Parser Interpretation
+389. Find the Difference
+Day 9
+709. To Lower Case
+1309. Decrypt String from Alphabet to Integer Mapping
+953. Verifying an Alien Dictionary
+Day 10
+1290. Convert Binary Number in a Linked List to Integer
+876. Middle of the Linked List
+104. Maximum Depth of Binary Tree
+404. Sum of Left Leaves
+Day 11
+1356. Sort Integers by The Number of 1 Bits
+232. Implement Queue using Stacks
+242. Valid Anagram
+217. Contains Duplicate
+Day 12
+1603. Design Parking System
+303. Range Sum Query - Immutable
