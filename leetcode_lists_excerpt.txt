@@ -99,6 +99,7 @@ Day 14
 ____
 
 
+
 Programming Skills
 Day 1
 1523. Count Odd Numbers in an Interval Range
@@ -146,3 +147,53 @@ Day 11
 Day 12
 1603. Design Parking System
 303. Range Sum Query - Immutable
+___
+
+
+
+Algorithm I
+Day 1
+704. Binary Search
+278. First Bad Version
+35. Search Insert Position
+Day 2
+977. Squares of a Sorted Array
+189. Rotate Array
+Day 3
+283. Move Zeroes
+167. Two Sum II - Input Array Is Sorted
+Day 4
+344. Reverse String
+557. Reverse Words in a String III
+Day 5
+876. Middle of the Linked List
+19. Remove Nth Node From End of List
+Day 6
+3. Longest Substring Without Repeating Characters
+567. Permutation in String
+Day 7
+733. Flood Fill
+695. Max Area of Island
+Day 8
+617. Merge Two Binary Trees
+116. Populating Next Right Pointers in Each Node
+Day 9
+542. 01 Matrix
+994. Rotting Oranges
+Day 10
+21. Merge Two Sorted Lists
+206. Reverse Linked List
+Day 11
+77. Combinations
+46. Permutations
+784. Letter Case Permutation
+Day 12
+70. Climbing Stairs
+198. House Robber
+120. Triangle
+Day 13
+231. Power of Two
+191. Number of 1 Bits
+Day 14
+190. Reverse Bits
+136. Single Number
