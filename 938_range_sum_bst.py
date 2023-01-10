@@ -3,6 +3,7 @@
     @author [mst]
     @file   938_range_sum_bst.py    
     @brief  leetcode problems series
+    938 and cn also be used for 144
     
     
     [wip] python bst tools: insertion, print etc.
@@ -13,6 +14,19 @@
     @version 0.1 2022.11
 '''
 
+class Solution:
+    def preorderTraversal(self, root):
+        res = []
+        self.dfs(root, res)
+        return res
+    
+    def dfs(self, root, res):
+        if root:
+            res.append(root.val)
+            self.dfs(root.left, res)
+            self.dfs(root.right, res)
+
+            
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
