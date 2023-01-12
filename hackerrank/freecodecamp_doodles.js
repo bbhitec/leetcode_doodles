@@ -112,58 +112,26 @@ function main() {
 */
 
 
-// 10 Days of Javascript: Day3: Try, Catch, and Finally
-function day3() {
-    function reverseString(s) {
-        let str;
-        try {
-            str = s.split("").reverse().join("");
-            console.log(str);
-        } catch (e) {
-            console.log(e.message);
-            console.log(s);
+// caesar cypher
+function rot13(str) {
+    let res = [];
+    for (let c = 0; c < str.length; c++) {
+        let char = str.charCodeAt(c);
+        //console.log(String.fromCharCode(char) + " : " +char, end="");
+        //process.stdout.write(String.fromCharCode(char) + " : " +char)
+        if (char >= 65 && char <= 90) {
+            char = ((char-65 + 13) % 26)+65;        
         }
-        
+        //console.log(" -> " + char + " : " + String.fromCharCode(char));
+        res.push(char);
     }
-    //reverseString("1234");
-    reverseString(Number(1234));
+    let res_str = String.fromCharCode(...res);
+    return res_str;
 }
 
-// Day 7,8: Regular Expressions II
-function day78() {
-    function regexVar() {
-        /*
-         * Declare a RegExp object variable named 're'
-         */
+console.log(rot13("SERR PBQR PNZC"));
+console.log(rot13("SERR CVMMN!"));
+console.log(rot13("SERR YBIR?"));
+console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."));
 
-        // day7
-        // It must match a string that starts with 'Mr.', 'Mrs.', 'Ms.', 'Dr.', or 'Er.', followed by one or more letters.
-        // let re = /^(Mr\.|Mrs\.|Ms\.|Dr\.|Er\.)([a-zA-Z])+$/;
 
-        // day8
-        // It must match ALL occurrences of numbers in a string.
-        let re = /\d+/g;
-
-        
-        
-        /*
-         * Do not remove the return statement
-         */
-        return re;
-    }
-    const re = regexVar();
-    const s7 = "Mr.Az"
-    const s8 = "102, 1948948 and 1.3 and 4.5"
-
-    //console.log(re.test(s));
-    //console.log(!!s.match(re));
-
-    const r = s8.match(re);
-    
-    for (const e of r) {
-        console.log(e);
-    }
-}
-
-// day3();
-day78();

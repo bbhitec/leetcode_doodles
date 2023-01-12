@@ -1,3 +1,5 @@
+<!-- Titles: Simple and explained solution [Python3][93%T][88%S][mst] -->
+
 # Intuition
 Build a bucket histogram of appearances of each letter, sort if by the bunber of appearances then construct an output string by printing char*times_appeared
 

@@ -1,29 +1,26 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   <filename>.<extension>    
-    @brief  <title or quick description>
-    full/optional description: this is a placeholder
-    template for new files creation
+    @brief  leetcode problems series
 
-    features, changelog:
-    -2022.05: -initial draft
+    gains:
+    -
 
-    @version 0.1 2022.05
+    @version 0.1 2023.01
 '''
 
-class className():
-    '''docstring comment
-    :type nums: List[int]
-    :type target: int
-    :rtype: List[int]
-     '''
-    def method1(self):
+
+class Solution:
+    def function(self):
         return
+
 
 ################## DRIVER
 def main():
-    print ("[mst] doodle")
+
+    sol = Solution()
+    print(f"{sol.function()=}")
+
 
 if __name__ == ("__main__"):
     main()
