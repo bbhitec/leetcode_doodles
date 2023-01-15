@@ -85,6 +85,31 @@ def nested_lists():
     for i in range(len(runner_arr)):
         print(runner_arr[i])
 
+def days30_arrays():
+
+    arr = [[1,1,1,0,0,0],
+           [0,1,0,0,0,0],
+           [1,1,1,0,0,0],
+           [0,0,2,4,4,0],
+           [0,0,0,2,0,0],
+           [0,0,1,2,4,0]]
+
+    max_sum = (6*6*(-9))
+        
+    # matrix dimensions are hard coded 6x6
+    for i in range(1,5):
+        for j in range(1,5):
+            hg_sum = arr[i-1][j-1]+arr[i-1][j]+arr[i-1][j+1]+arr[i][j]+arr[i+1][j-1]+arr[i+1][j]+arr[i+1][j+1]
+            print(f"{arr[i-1][j-1]} {arr[i-1][j]} {arr[i-1][j+1]}\n  {arr[i][j]}\n{arr[i+1][j-1]} {arr[i+1][j]} {arr[i+1][j+1]}")
+            if hg_sum > max_sum: max_sum = hg_sum
+
+        
+            
+    print(max_sum)
+    
+
+    
+
 
     
 
@@ -97,8 +122,8 @@ def main():
     # is_leap()
     # list_comprehensions()
     # runner_up()
-
-    nested_lists()
+    #nested_lists()
+    days30_arrays()
 
 
 if __name__ == ("__main__"):
