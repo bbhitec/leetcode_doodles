@@ -93,6 +93,22 @@ string rtrim(const string &str) {
     return s;
 }
 
+//printing the 2D vector
+void print2Dvec (vector<vector<int>> s) {
+    cout << "printing the 2D vector\n";
+    for (auto it : s) {
+        //it is now an 1D vector
+        for (auto ij : it) {
+            cout << ij << " ";
+        }
+        cout << endl;
+    }
+
+}
+    
+
+///// individuals:
+
 vector<string> split(const string &str) {
     vector<string> tokens;
 
@@ -110,6 +126,34 @@ vector<string> split(const string &str) {
     return tokens;
 }
 
+int utopianTree(int n) {
+    
+    int size = 1;
+    int period = 0;
+    
+    while (n) {
+        size = (period)?size+1:size*2;
+        period ^= 1; 
+        n--;        
+    }
+    
+    return size;
+}
+
+int formingMagicSquare(vector<vector<int>> s) {
+    //[here]
+    int row_sum = 15;
+    int all_sum = 45;
+    int sum = 0;
+
+    for (auto it : s) {
+        for (auto ij : it) {
+            // cout << ij << " ";
+            sum+=ij;
+        }
+    }
+    cout << sum << endl;
+}
 
 ////////////////// DRIVER
 int main()
@@ -135,10 +179,20 @@ int main()
     // miniMaxSum({1, 2, 3, 4, 5});
     // miniMaxSum({156873294, 719583602, 581240736, 605827319, 895647130});
 
+    // vector<int> arr3 = {63,25,73,1,98,73,56,84,86,57,16,83,8,25,81,56,9,53,98,67,99,12,83,89,80,91,39,86,76,85,74,39,25,90,59,10,94,32,44,3,89,30,27,79,46,96,27,32,18,21,92,69,81,40,40,34,68,78,24,87,42,69,23,41,78,22,6,90,99,89,50,30,20,1,43,3,70,95,33,46,44,9,69,48,33,60,65,16,82,67,61,32,21,79,75,75,13,87,70,33};
+    // vector<int> arr3_res = countingSort(arr3);
+    // printVec(arr3_res);
 
-    vector<int> arr3 = {63,25,73,1,98,73,56,84,86,57,16,83,8,25,81,56,9,53,98,67,99,12,83,89,80,91,39,86,76,85,74,39,25,90,59,10,94,32,44,3,89,30,27,79,46,96,27,32,18,21,92,69,81,40,40,34,68,78,24,87,42,69,23,41,78,22,6,90,99,89,50,30,20,1,43,3,70,95,33,46,44,9,69,48,33,60,65,16,82,67,61,32,21,79,75,75,13,87,70,33};
-    vector<int> arr3_res = countingSort(arr3);
-    printVec(arr3_res);    
+    //cout <<  utopianTree(1);
+
+    vector<vector<int> > s{
+        { 1, 2, 3 }, //comma separated lists
+        { 5, 6, 7 },
+        { 8, 9, 3 }
+    };
+    print2Dvec (s);
+    cout << formingMagicSquare(s);
+    
 
     return 0;
 }
