@@ -50,7 +50,7 @@ class Solution0:
 #
 #
 # sub: 84%T 98%S
-class Solution:
+class Solution1:
     def uniquePaths(self, m: int, n: int) -> int:
         import math
 
@@ -61,6 +61,27 @@ class Solution:
         paths = math.factorial(all_steps)//(math.factorial(down) * math.factorial(right))        
         return paths
 
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+
+        # [demo] initializing 2d array
+        # memo = [[0]*n]*m
+        memo = [[1 for i in range(n)] for j in range(m)]
+
+        for i in range(1,m):
+            for j in range(1,n):
+                memo[i][j] = memo[i-1][j] + memo[i][j-1]
+                
+
+        # for i in range(1,m):
+        #     for j in range(1,n):
+        #         print (memo[i][j], end=' ')
+        #     print ("")
+
+        return memo[-1][-1]
+
+
+
 
 ################## DRIVER
 def main():
@@ -69,8 +90,8 @@ def main():
     # m,n = 3,2
     # print(f"{sol.uniquePaths(m,n)=}")
 
-    # m,n = 3,7
-    # print(f"{sol.uniquePaths(m,n)=}")
+    m,n = 3,7
+    print(f"{sol.uniquePaths(m,n)=}")
 
     # m,n = 2,2
     # print(f"{sol.uniquePaths(m,n)=}")
