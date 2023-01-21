@@ -61,6 +61,12 @@ class Solution1:
         paths = math.factorial(all_steps)//(math.factorial(down) * math.factorial(right))        
         return paths
 
+# DP approach
+# Build a helping memoization structure to represent unique paths
+# to each cell and update it bottom-up (for each cell add paths
+# to top and left neighbors, as we traverse only right and down)
+#
+# sub: 50%T 69%S
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
 
