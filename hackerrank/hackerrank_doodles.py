@@ -103,16 +103,59 @@ def days30_arrays():
             print(f"{arr[i-1][j-1]} {arr[i-1][j]} {arr[i-1][j+1]}\n  {arr[i][j]}\n{arr[i+1][j-1]} {arr[i+1][j]} {arr[i+1][j+1]}")
             if hg_sum > max_sum: max_sum = hg_sum
 
-        
-            
     print(max_sum)
+
+
+def py_lists():    
+    N = int(input())
+    l1 = []
+    for i in range(N):
+        # [demo] treating variable elements inputs
+        line = input().split()
+        
+        if line[0] == "print":
+            print(l1)
+        elif line[0] == "insert":
+            l1.insert(int(line[1]),int(line[2]))
+        elif line[0] == "remove":
+            l1.remove(int(line[1]))
+        elif line[0] == "pop":
+            l1.pop()
+        elif line[0] == "append":
+            l1.append(int(line[1]))
+        elif line[0] == "sort":
+            l1.sort()
+        else:
+            l1.reverse()
+
+def count_substring():
+    string, sub_string = "ABCDCDC","CDC"
+
+    sub_length = len(sub_string)
+
+    count = 0
+    for i in range(len(string)-sub_length+1):
+        if (string[i:i+sub_length] == sub_string):
+            count += 1
     
+    print (count)
+    return count
 
+
+def print_rangoli(n):
+    # your code goes here
+    import string
+
+    # [demo] a string with all lowercase letters
+    alpha = string.ascii_lowercase
+    print(alpha)
     
-
-
-    
-
+    L = []
+    for i in range(n):
+        s = "-".join(alpha[i:n])
+        L.append((s[::-1]+s[1:]).center(4*n-3, "-"))
+        
+    print('\n'.join(L[:0:-1]+L))
 
 ################## DRIVER
 def main():
@@ -122,8 +165,14 @@ def main():
     # is_leap()
     # list_comprehensions()
     # runner_up()
-    #nested_lists()
-    days30_arrays()
+    # nested_lists()
+    # days30_arrays()
+
+    # py_lists()
+    # count_substring()
+    print_rangoli(5)
+
+
 
 
 if __name__ == ("__main__"):
