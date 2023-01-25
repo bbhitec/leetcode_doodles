@@ -11,13 +11,14 @@
     -bfs/dfs matrix traversal
 
     features, changelog:
+    -2023.01.25 -optimized: don't pass the image in the dfs
     -2023.01: -submission
 '''
 
 # one land is spotted, flood fill given island with null value while adding to a counter
 #
-# sub: 29%T 65%S
-class Solution:
+# sub: 73%T 65%S
+class Solution0:
     def numIslands(self, grid: [[str]]) -> int:
         num = 0
 
@@ -45,7 +46,41 @@ class Solution:
         self.consumeIsland(image, sr, sc - 1)
         self.consumeIsland(image, sr - 1, sc)
         return
-    
+
+# optimized: don't pass the image in the dfs
+#
+# sub: 98T 64S
+class Solution:
+    def numIslands(self, grid: [[str]]) -> int:
+
+        def consumeIsland(sr: int, sc: int):
+            # basic cases
+            if (sr >= rows) or (sr < 0): return 
+            if (sc >= cols) or (sc < 0): return 
+
+            if grid[sr][sc] != "1": return
+            else:
+                grid[sr][sc] = "0"
+
+            consumeIsland(sr, sc + 1)
+            consumeIsland(sr + 1, sc)
+            consumeIsland(sr, sc - 1)
+            consumeIsland(sr - 1, sc)
+            return
+
+        rows = len(grid)
+        cols = len(grid[0])
+        num = 0
+
+        for row in range(rows):
+            for col in range(cols):
+                if grid[row][col] == "1":                    
+                    consumeIsland(row,col)
+                    num = num + 1
+
+        # print("after:")
+        # print_matrix(grid)
+        return num
 
 # helper method: print as table
 def print_matrix(image):
