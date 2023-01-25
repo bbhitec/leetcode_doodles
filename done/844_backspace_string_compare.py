@@ -40,7 +40,7 @@ class Solution:
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
 
     # s = "ab#c"

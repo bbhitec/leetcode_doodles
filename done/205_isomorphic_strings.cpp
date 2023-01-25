@@ -10,7 +10,7 @@ Gains:
 
 features, changelog:
 -2022.12: -initial draft
-*/ 
+*/
 
 
 ////////////////// LIBS
@@ -45,7 +45,7 @@ public:
 				reverse[t[i]] = s[i];
 			}
 			else {
-				if ((vocabulary[s[i]] != t[i]) || (reverse[t[i]] != s[i])) return false;				
+				if ((vocabulary[s[i]] != t[i]) || (reverse[t[i]] != s[i])) return false;
 			}
 		}
 		return true;
@@ -66,7 +66,7 @@ public:
         return true;
     }
 };
-	
+
 
 ////////////////// DRIVER
 int main()

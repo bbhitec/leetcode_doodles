@@ -1,4 +1,4 @@
-''' 
+'''
 [mst] 38_countsay.py
 leetcode problems series
 
@@ -34,19 +34,19 @@ class Solution0(object):
     def say(self, sequence):
         s = str(sequence)
         res = []
-        
+
         count = 0
         for i in range(len(s)):
             char = s[i]
             if (i > 1) and s[i-1] == char:
             str = count + 1 # [here]
-            
-            
+
+
                 continue
             res.append(chr(prev_s.count(char)))
             res.append(char)
         print (res)
-    
+
     def countAndSay(self, n):
         """
         :type n: int
@@ -54,10 +54,10 @@ class Solution0(object):
         """
         if n==1:
             return '1'
-        
+
         prev = self.countAndSay(n - 1)
         res = self.say(prev)
-        
+
         return res
 '''
 
@@ -68,9 +68,9 @@ class Solution:
     def countAndSay(self, n: int) -> str:
         if n == 1:
             return "1"
-        
-        return self.say(self.countAndSay(n-1))        
-    
+
+        return self.say(self.countAndSay(n-1))
+
     def say(self, s: str) -> str:
         cur, count = s[0], 1
         res = []
@@ -85,12 +85,12 @@ class Solution:
         res.append(str(count))
         res.append(cur)
         return ''.join(res)
-        
+
 
 # driver
 def main():
     print ("[mst] leetcode 38. Count and Say")
- 
+
     s = Solution()
     n = 4
     print(s.countAndSay(n))
@@ -98,5 +98,4 @@ def main():
 # [mst][demo] this is a check for running via command line
 if __name__ == ("__main__"):
     main()
-    
-        
+

@@ -1,14 +1,14 @@
 ##!/usr/bin/env python
 """
-[mst] 1_twosum.py 
+[mst] 1_twosum.py
 leetcode problems series
 
   1. Two Sum
   Given an array of integers, return indices of the two numbers such that
   they add up to a specific target. You may assume that each input would have
-  exactly one solution, and you may not use the same element twice.        
+  exactly one solution, and you may not use the same element twice.
   Example:
-  Given nums = [2, 7, 11, 15], target = 9,        
+  Given nums = [2, 7, 11, 15], target = 9,
   Because nums[0] + nums[1] = 2 + 7 = 9,
   return[0, 1].
 
@@ -33,7 +33,7 @@ class Solution(object):
         :rtype: List[int]
         naive: run a nested loop to to check all sum combinations
         ~6000ms runtime on leetcode
-        """ 
+        """
         for i, vali in enumerate(nums):
             for j, valj in enumerate(nums):
                 if (i != j): # can't use same element twice
@@ -41,7 +41,7 @@ class Solution(object):
                     if (vali+valj == target) and (i!=j):
                         return [i,j]
 
-    def twoSum(self, nums, target):        
+    def twoSum(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
@@ -56,8 +56,8 @@ class Solution(object):
             diff = target - vali    # calc diff
             if diff in diff_hash:   # see if matched
                 return [diff_hash[diff], i] # if yes - return indices
-            diff_hash[vali] = i # else - add element (not the diff) to hash   
-        
+            diff_hash[vali] = i # else - add element (not the diff) to hash
+
         # case of no match found? (not required since every input has a solution)
 
 # driver
@@ -65,7 +65,7 @@ def main():
     print ("[mst] leetcode 1. two sum problem")
 
     s = Solution()
-    
+
     sum = 8
     arr = [1, 4, 11, 15,4]
     print ("looking for sum:", sum, "in", arr, "naive")
@@ -83,10 +83,9 @@ def main():
     arr = [2,7,11,15]
     print ("looking for sum:", sum, "in", arr, "hash version")
     print(s.twoSum(arr, sum))
-    
+
 
 # [mst][demo] this is a check for running via command line
 if __name__ == ("__main__"):
     main()
-    
-        
+

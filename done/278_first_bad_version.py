@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   278_first_bad_version.py    
+    @file   278_first_bad_version.py
     @brief  leetcode problems series
     278. First Bad Version
     You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
@@ -54,7 +54,7 @@ bad = 1
 
 def setBad (version):
     global bad
-    bad = version 
+    bad = version
 
 
 def isBadVersion(version: int) -> bool:
@@ -64,10 +64,10 @@ def isBadVersion(version: int) -> bool:
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
 
-    # versions = 5    
+    # versions = 5
     # setBad(4)
     # print(sol.firstBadVersion(versions))
 
@@ -78,7 +78,7 @@ def main():
     versions = 2126753390
     setBad(1702766719)
     print(sol.firstBadVersion(versions))
-    
+
 
 
 if __name__ == ("__main__"):

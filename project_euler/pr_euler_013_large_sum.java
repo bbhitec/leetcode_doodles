@@ -1,8 +1,8 @@
 /*
  * project euler question 13
- * 
+ *
  * sum of longa$$ numbers
- * 
+ *
  */
 
 package pe013_large_sum;
@@ -10,7 +10,7 @@ package pe013_large_sum;
 public class Main {
 
 	public static void main(String[] args) {
-		String full_sum_str = 
+		String full_sum_str =
 				 "37107287533902102798797998220837590246510135740250"+
 				"+46376937677490009712648124896970078050417018260538"+
 				"+74324986199524741059474233309513058123726617309629"+
@@ -111,13 +111,13 @@ public class Main {
 				"+72107838435069186155435662884062257473692284509516"+
 				"+20849603980134001723930671666823555245252804609722"+
 				"+53503534226472524250874054075591789781264330331690";
-				
+
 		System.out.println("Here's what we are working with...\n" + full_sum_str);
 		System.out.println("Let's parse it with java's split on the plusses...");
-		
+
 		String[] full_sum_tokened = full_sum_str.split("\\+");//my_str_tok(full_sum_str);
 		System.out.println ("OK, split to " + full_sum_tokened.length + " strings!");
-		
+
 		System.out.println ("Lets check the numbers are same lenth...");
 		int str_length 	= full_sum_tokened[0].length();
 		boolean same_length	= true;
@@ -125,7 +125,7 @@ public class Main {
 			int length = string.length();
 			same_length = (str_length == string.length());
 		}
-		
+
 		if (same_length){
 			System.out.println ("The numbers arethe same length! (of " + str_length + ")...");
 		}
@@ -133,9 +133,9 @@ public class Main {
 			System.out.println ("The numbers aren't the same length!...");
 			return;
 		}
-		
+
 		/////////////////// curr
-		
+
 		int sum1 = 0;
 		char c ;
 		for (int i = str_length; i > 0; i--) {
@@ -144,20 +144,20 @@ public class Main {
 				System.out.println("char at tokens["+(i-1)+"]: "+c);
 				sum1 += Character.valueOf(c);
 				same_length = (str_length == string.length());
-				//System.out.println ("init calcs: " + sum1);	
+				//System.out.println ("init calcs: " + sum1);
 			}
-			
-			
-				
+
+
+
 		}
-			
-		
-		
-		
-		
-		
-		
-				
+
+
+
+
+
+
+
+
 	}
 
 

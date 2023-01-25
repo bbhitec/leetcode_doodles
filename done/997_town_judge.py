@@ -13,7 +13,7 @@
 
     gains:
     -simple graph algorithmic solution
-    
+
 
     @version 0.1 2023.01
 '''

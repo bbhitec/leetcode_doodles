@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   704_binary_search.py    
+    @file   704_binary_search.py
     @brief  leetcode problems series
     704. Binary Search
     Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
@@ -35,7 +35,7 @@ class Solution:
 
         while lower <= upper:
              # let the middle of search section control search direction
-            middle = (upper + lower) //2   
+            middle = (upper + lower) //2
             if nums[middle] == target: return middle
 
             #update boundaries
@@ -50,7 +50,7 @@ class Solution:
 class Solution0:
     def search(self, nums: int, target: int) -> int:
         if len(nums) == 1:
-            return target == nums[0]        
+            return target == nums[0]
         for i, n in enumerate(nums):
             if target == n:
                 return i
@@ -60,18 +60,18 @@ class Solution0:
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
     nums = [-1,0,3,5,9,12]
     target = 2
 
     # nums = [2,5]
     # target = 5
-       
+
     # testing
     print(sol.search(nums,target))
 
-    
+
 
 
 if __name__ == ("__main__"):

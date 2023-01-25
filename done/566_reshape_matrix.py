@@ -7,7 +7,7 @@
     You are given an m x n matrix mat and two integers r and c representing the number of rows and the number of columns of the wanted reshaped matrix.
     The reshaped matrix should be filled with all the elements of the original matrix in the same row-traversing order as they were.
     If the reshape operation with given parameters is possible and legal, output the new reshaped matrix; Otherwise, output the original matrix.
-    
+
     Gains:
     -python basic matrix operation
 
@@ -40,14 +40,14 @@ class Solution:
             line = []
             for j in range(c):
                 if linear: line.append(linear.pop(0))
-            res.append(line)       
-        
+            res.append(line)
+
         return res
 
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
     mat = [[1,2],[3,4]]
     r = 2
@@ -56,7 +56,7 @@ def main():
     res = sol.matrixReshape(mat,r,c)
     print(f"testing {mat=} {r=} {c=} res: {res=}")
 
-    
+
 
 if __name__ == ("__main__"):
     main()

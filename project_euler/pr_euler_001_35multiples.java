@@ -14,9 +14,9 @@ public class Pe001_35mult {
 		for (i = 0; i< 1000; i++)
 		{
 			if ((0 == i % 3) || (0 == i%5)){
-				sum += i;				
+				sum += i;
 			}
-				
+
 		}
 		System.out.println("Multiples of 3 and 5, Problem 1, sum = " + sum);
 

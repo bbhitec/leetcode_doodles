@@ -28,7 +28,7 @@ class Solution:
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
 
     nums = [-4,-1,0,3,10]

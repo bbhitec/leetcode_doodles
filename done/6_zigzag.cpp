@@ -19,7 +19,7 @@
     1 <= s.length <= 1000
     s consists of English letters (lower-case and upper-case), ',' and '.'.
     1 <= numRows <= 1000
-    
+
 
     features, changelog:
     -2021.07:	-initial draft
@@ -46,7 +46,7 @@ using namespace std;
 class Solution {
 public:
     string convert(string s, int numRows) {
-        if (numRows == 1) return s;   
+        if (numRows == 1) return s;
 
         vector<vector<char>> stack1{};
         for (int i=0;i<numRows;i++){
@@ -70,7 +70,7 @@ public:
         for (vector<char> row : stack1) {
             for (char ch : row) res += ch;
         }
-        return res;    
+        return res;
     }
 };
 

@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   70_climbing_stairs.py    
+    @file   70_climbing_stairs.py
     @brief  leetcode problems series
     You are climbing a staircase. It takes n steps to reach the top.
     Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
@@ -25,11 +25,11 @@ import time
 # sub: 95%T 57%S
 class Solution:
     def climbStairs(self, n: int) -> int:
-        
+
         memo = {1:1,2:2}
 
         for i in range(3,n+1):
-            memo[i] = memo[i-1] + memo[i-2]       
+            memo[i] = memo[i-1] + memo[i-2]
 
         return memo[n]
 
@@ -50,14 +50,14 @@ class Solution0:
 ################## DRIVER
 def main():
     sol = Solution()
-       
+
     # testing
     n = 38
     start = time.perf_counter() # [bp] time the start with performance counter
     res = sol.climbStairs(n)
     diff = time.perf_counter()-start
     print (f'task for {n=} resulted {res=} ran for {diff} secs')
-    
+
 
 if __name__ == ("__main__"):
     main()

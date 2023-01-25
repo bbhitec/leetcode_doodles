@@ -2,7 +2,7 @@
     @author [mst]
     @file   510_detect_capital
     @brief  title or quick description
-    
+
 	We define the usage of capitals in a word to be right when one of the following cases holds:
 	All letters in this word are capitals, like "USA".
 	All letters in this word are not capitals, like "leetcode".
@@ -13,7 +13,7 @@
 	-conditionals basics
 
     @version 0.1 2023.01
-*/ 
+*/
 
 
 ////////////////// LIBS
@@ -64,7 +64,7 @@ public:
 
     bool detectCapitalUse(string word) {
         if (word.size() == 1) return true;
-        
+
         bool capital = isCapital(word);
         bool lower = isLower(word);
         bool sentence = isSentence(word);

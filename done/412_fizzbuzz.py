@@ -61,7 +61,7 @@ class Solution2 (object):
             res_str = ''
 
             # if 'i' is divisible by 'key', replace with mapped string
-            for key in fizz_buzzes:                
+            for key in fizz_buzzes:
                 if (i % key == 0):
                     res_str += fizz_buzzes[key]
 

@@ -4,7 +4,7 @@
     @brief  leetcode problems series
     144_bst_preorder.py
     Given the root of a binary tree, return the preorder traversal of its nodes' values.
-    
+
     gains:
     -python tree structure
     -basic tree traversal
@@ -16,7 +16,7 @@
 '''
 
 
-            
+
 ################## DECL_IMPL
 
 # Definition for a binary tree node. (taken from leetcode problems)
@@ -69,7 +69,7 @@ class Solution:
         res = []
         self.dfs(root, res)
         return res
-    
+
     def dfs(self, root, res):
         if root:
             res.append(root.val)
@@ -85,7 +85,7 @@ def main():
     root = []
     # root = [1]
     # root = [1,2,3]
-    
+
     # testing
     head = TreeNode()
     head.insert_arr(root)
@@ -93,8 +93,8 @@ def main():
     print(f"{root=}, {res=}")
 
 
-    
-    
+
+
 
 
 if __name__ == ("__main__"):

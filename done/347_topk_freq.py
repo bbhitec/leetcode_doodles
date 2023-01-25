@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 """
-[mst] 347_topk_freq.py 
+[mst] 347_topk_freq.py
 leetcode problems series
 
 347. Top K Frequent Elements
 Given an integer array nums and an integer k, return the k most frequent
-elements. You may return the answer in any order. 
+elements. You may return the answer in any order.
 
 Example 1:
 Input: nums = [1,1,1,2,2,3], k = 2
@@ -14,7 +14,7 @@ Output: [1,2]
 Example 2:
 Input: nums = [1], k = 1
 Output: [1]
- 
+
 Constraints:
 1 <= nums.length <= 105
 k is in the range [1, the number of unique elements in the array].
@@ -53,7 +53,7 @@ class Solution0(object):
             if num in count_dict:
                 count_dict[num] = count_dict[num] + 1
             else:
-                count_dict[num] = 1 # else - add element (not the diff) to hash 
+                count_dict[num] = 1 # else - add element (not the diff) to hash
 
         # sort by values so the k first members are the most frequent
         sortedout = {key: val for key, val in sorted(count_dict.items(), key = lambda ele: ele[1], reverse = True)}
@@ -68,7 +68,7 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         returns the k most frequent elements in a given list.
-        smart keying: use count (frequency) as a bucket, with a size bound to 
+        smart keying: use count (frequency) as a bucket, with a size bound to
         len(nums), since its the maximum occurences (all nums are the same).
         hence O(n) time. then, just pick the last members for an answer
         """
@@ -78,7 +78,7 @@ class Solution(object):
 
         # index i holds i-frequent member of nums
         freqs = [[] for i in range(len(nums) +1 )]
-        
+
 
         # count the occurences
         for num in nums:
@@ -86,7 +86,7 @@ class Solution(object):
                 count_dict[num] = count_dict[num] + 1
             else:
                 count_dict[num] = 1 # else - add element (not the diff) to hash
-        
+
         # build the buckets: freq[coun] = list of corresponding members
         for n, c in count_dict.items():
             #print (f"{n=},{c=}")
@@ -120,14 +120,14 @@ def main():
     k = 2
     result = s0.topKFrequent(nums,k)
     print (f'test: {nums=}, {k=}, {result=}')
-    
+
 
     nums = [1,1,1,2,2,2,2,2,3,3,3,3,3,3,3,3,3]
     k = 2
     result = s0.topKFrequent(nums,k)
     print (f'test: {nums=}, {k=}, {result=}')
     '''
-    
+
     s = Solution()
     nums = [1,1,1,2,2,3]
     k = 2
@@ -139,10 +139,9 @@ def main():
     result = s.topKFrequent(nums,k)
     print (f'test: {nums=}, {k=}, {result=}')
 
-    
+
 
 # [mst][demo] this is a check for running via command line
 if __name__ == ("__main__"):
     main()
-    
-        
+

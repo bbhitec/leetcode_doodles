@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   206_reverse_linked_list.py    
+    @file   206_reverse_linked_list.py
     @brief  leetcode problems series
     206. Reverse Linked List
     Given the head of a singly linked list, reverse the list, and return the reversed list.
@@ -26,7 +26,7 @@ class ListNode:
 def make_list(nums):
     if not nums:
         return None
-    
+
     head = ListNode(nums[0])
     p = head
     for n in nums[1::]:
@@ -50,14 +50,14 @@ class Solution:
         # stopping condition. we use next.nxt so we have to check it is valid
         if head is None or head.next is None:
             return head
- 
+
         # treat rest of list
         rest = self.reverseList(head.next)
- 
+
         # treat current node
         head.next.next = head
         head.next = None
- 
+
         return rest
 
 
@@ -73,7 +73,7 @@ class Solution1:
             curr.next = prev
             prev = curr
             curr = next
-            
+
         return prev
 
 
@@ -83,17 +83,17 @@ class Solution1:
 ################## DRIVER
 def main():
     print ("[mst] 206_reverse_linked_list")
-    
+
     sol = Solution()
 
-       
+
     # testing
     case = [1,2,3,4]
     l1 = make_list(case)
     print_list(l1)
     l1r = sol.reverseList(l1)
     print_list(l1r)
-    
+
 
 
 if __name__ == ("__main__"):

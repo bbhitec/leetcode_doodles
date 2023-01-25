@@ -37,20 +37,20 @@ public:
             ans.push_back(path);
             return;
         }
-        
+
         for (auto i = start; i < s.length(); ++i) {
             if (isPalindrome(s, start, i)) {
                 path.push_back(s.substr(start, i - start + 1));
                 dfs(s, i + 1, move(path), ans);
                 path.pop_back();
             }
-        }            
+        }
     }
 
     vector<vector<string>> partition(string s) {
         vector<vector<string>> ans;
         dfs(s, 0, {}, ans);
-        return ans;        
+        return ans;
     }
 };
 

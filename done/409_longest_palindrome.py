@@ -1,11 +1,11 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   409_longest_palindrome    
+    @file   409_longest_palindrome
     @brief  leetcode problems series
     409. Longest Palindrome
-    
-    Given a string s which consists of lowercase or uppercase letters, return the length of the longest palindrome that can be built with those letters. 
+
+    Given a string s which consists of lowercase or uppercase letters, return the length of the longest palindrome that can be built with those letters.
     Letters are case sensitive, for example, "Aa" is not considered a palindrome here.
 
 
@@ -28,7 +28,7 @@ class Solution:
     def longestPalindrome(self, s: str) -> int:
         if s is None:
             return 0
-        
+
         buckets = {}
         longest = 0
         middle = 0
@@ -62,15 +62,15 @@ class Solution0:
 ################## DRIVER
 def main():
     print ("[mst] 409_longest_palindrome")
-    
+
     sol = Solution()
 
-       
+
     # testing
     print(sol.longestPalindrome("abccccdd"))
     print(sol.longestPalindrome("a"))
     print(sol.longestPalindrome("ccc"))
-    
+
 
 if __name__ == ("__main__"):
     main()

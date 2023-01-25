@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   733_flood_fill.py    
+    @file   733_flood_fill.py
     @brief  leetcode problems series
     733. Flood Fill
 
@@ -25,12 +25,12 @@
 
 # Recursive approach: recurse over all valid (adjacent, same color)
 # neighbors while coloring the tile if needed
-# 
+#
 # sub: 92%T 66%T
 class Solution:
 
     # the original color. -1 meaning 'not set'
-    orig = -1 
+    orig = -1
 
     def floodFill(self, image: [[int]], sr: int, sc: int, color: int) -> [[int]]:
 
@@ -42,9 +42,9 @@ class Solution:
         if self.orig == -1:
             self.orig = image[sr][sc]
 
-        # the actual fill        
+        # the actual fill
         if (image[sr][sc] != self.orig) or (image[sr][sc] == color):
-            return image     
+            return image
         else:
             image[sr][sc] = color
 
@@ -68,7 +68,7 @@ def print_matrix(image):
 ################## DRIVER
 def main():
     print ("[mst]")
-    
+
     sol = Solution()
 
     # image = [[1,1,1],[1,1,0],[1,0,1]]

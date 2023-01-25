@@ -1,6 +1,6 @@
 /**
     @author [mst]
-    @file   518_coin_change2.cpp    
+    @file   518_coin_change2.cpp
     @brief  leetcode problems series
 
     You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
@@ -55,7 +55,7 @@ private:
                 cout << coins << " " ;
                 }
             }
-            sort( trace.begin(), trace.end() );            
+            sort( trace.begin(), trace.end() );
             if(solutions.insert(trace).second) {
                 sol_count ++;
                 return 0;   // report a found uniquely composed solution
@@ -81,7 +81,7 @@ public:
     int change(int amount, vector<int>& coins) {
         combinations_checkup(amount, coins);
 
-        return sol_count;        
+        return sol_count;
     }
 };
 
@@ -100,13 +100,13 @@ public:
         if(i<0 || amt < 0){return 0;}
         if(amt == 0){return 1;}
         if(dp[i][amt] != -1 ){return dp[i][amt];}
-        
+
         return dp[i][amt] = solve(coins , amt-coins[i] , i) + solve(coins , amt , i-1);
     }
 
     int change(int amount, vector<int>& coins) {
-        
-        // prep the memoization record        
+
+        // prep the memoization record
         dp = new int*[coins_msize];
         // [here] do a proper initialization
         // [wip] make the last example work
@@ -115,16 +115,16 @@ public:
             memset(dp[i] , -1 , coins_msize*sizeof(dp[i])/2);
 
         }
-        
+
         int n = coins.size();
-        
+
         res = solve(coins , amount , n-1);
 
         // for (int i = 0; i < coins_msize; i++) {
         //     for (int j = 0; j < amounts; j++)
         //     {
         //         cout << dp[i][j] << " ";
-        //     }            
+        //     }
         //     cout << endl;
 
         // }
@@ -135,7 +135,7 @@ public:
         }
         delete[] dp;
 
-        return res; 
+        return res;
 
     }
 };
@@ -143,7 +143,7 @@ public:
 
 ////////////////// DRIVER
 int main()
-{    
+{
 	cout << "[mst] 518_coin_change2" << endl;
     //Solution2 sol1;
     Solution sol1;
@@ -155,7 +155,7 @@ int main()
     // 5=5
     // 5=2+2+1
     // 5=2+1+1+1
-    // 5=1+1+1+1+1    
+    // 5=1+1+1+1+1
     int amt = 5;
     vector<int> coins = {1,2,5};
     cout << "Input: amount = 5, coins = [1,2,5]. Sol: " << sol1.change(amt,coins) << endl;

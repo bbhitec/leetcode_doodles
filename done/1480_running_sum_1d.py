@@ -33,13 +33,13 @@ class Solution1:
                 res.append(res[-1]+n)
             return res
 
-        
+
 # driver
 def main():
     print ("[mst] 1480_running_sum_1d")
-    
+
     sol = Solution()
-        
+
     # testing
     case0 = [1,2,3,4]
     case1 = [1,1,1,1,1]
@@ -52,4 +52,4 @@ def main():
 
 # [mst][demo] this is a check for running via command line
 if __name__ == ("__main__"):
-    main() 
+    main()

@@ -7,7 +7,7 @@ Gains:
 
 features, changelog:
 -2022.12: -initial draft
-*/ 
+*/
 
 
 ////////////////// LIBS
@@ -30,7 +30,7 @@ public:
 		if (s.length() > t.length()) return false;
 
 		char *sc = &s[0];
-		
+
 		for (char& tc: t) {
 			if ((*sc == tc) && (*sc != '\0')) {
 				sc++;
@@ -51,7 +51,7 @@ public:
 		if (s.length() > t.length()) return false;
 
 		int i = 0;
-		
+
 		for (char& tc: t) {
 			while ((s[i] == tc+i) && (i < sl)) {
 				i++;
@@ -62,7 +62,7 @@ public:
         return false;
     }
 };
-	
+
 
 ////////////////// DRIVER
 int main()
@@ -80,6 +80,6 @@ int main()
 	string s3 = "";
 	string t3 = "ahbgdc";
 	cout << "result: " << sol.isSubsequence(s3, t3) << endl;
-	
+
 	return 0;
 }

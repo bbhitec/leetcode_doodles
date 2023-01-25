@@ -24,7 +24,7 @@ class Solution0:
 
         for row in range(len(grid)):
             for col in range(len(grid[0])):
-                if grid[row][col] == "1":                    
+                if grid[row][col] == "1":
                     self.consumeIsland(grid, row,col)
                     num = num + 1
 
@@ -34,8 +34,8 @@ class Solution0:
 
     def consumeIsland(self, image: [[int]], sr: int, sc: int):
         # basic cases
-        if (sr >= len(image)) or (sr < 0): return 
-        if (sc >= len(image[0])) or (sc < 0): return 
+        if (sr >= len(image)) or (sr < 0): return
+        if (sc >= len(image[0])) or (sc < 0): return
 
         if image[sr][sc] != "1": return
         else:
@@ -55,8 +55,8 @@ class Solution:
 
         def consumeIsland(sr: int, sc: int):
             # basic cases
-            if (sr >= rows) or (sr < 0): return 
-            if (sc >= cols) or (sc < 0): return 
+            if (sr >= rows) or (sr < 0): return
+            if (sc >= cols) or (sc < 0): return
 
             if grid[sr][sc] != "1": return
             else:
@@ -74,7 +74,7 @@ class Solution:
 
         for row in range(rows):
             for col in range(cols):
-                if grid[row][col] == "1":                    
+                if grid[row][col] == "1":
                     consumeIsland(row,col)
                     num = num + 1
 
@@ -95,7 +95,7 @@ def print_matrix(image):
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
 
     grid = [

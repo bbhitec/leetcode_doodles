@@ -9,8 +9,8 @@
     gains:
     -python loop boundaries
     -mirror-traversal
-    
-    
+
+
 
     features, changelog:
     -2023.01: -submission
@@ -36,7 +36,7 @@ class Solution:
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
 
     s = ["h","e","l","l","o","o"]

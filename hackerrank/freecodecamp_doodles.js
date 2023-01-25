@@ -22,8 +22,8 @@ process.stdin.on('end', _ => {
     inputString = inputString.trim().split('\n').map(string => {
         return string.trim();
     });
-    
-    main();    
+
+    main();
 });
 
 function readLine() {
@@ -37,11 +37,11 @@ function regexVar() {
     //
     let re = /^([aeiou]).+\1$/;
     return re;
-    
-    
-    // 
+
+
+    //
     // Do not remove the return statement
-    // 
+    //
     return re;
 }
 
@@ -51,14 +51,14 @@ function main() {
     //const s = readLine();
 
     r1.question('Give me a number, I\'ll add five! ', function(num) {
-    
+
         // Tell JS this is a number
         num = parseInt(num);
         console.log(num + 5);
         // Close, or it will keep reading forever
         r1.close();
     })
-    
+
     // console.log(re.test(s));
     //console.log(re.test(s));
 }
@@ -70,7 +70,7 @@ function main() {
 //     }
 //     return num * factorial(num - 1);
 //   }
-  
+
 //   let n = factorial(8);
 //   console.log(n); // 40320
 
@@ -95,7 +95,7 @@ process.stdin.on('end', _ => {
         return string.trim();
     });
 
-    main();    
+    main();
 });
 
 function readLine() {
@@ -120,7 +120,7 @@ function rot13(str) {
         //console.log(String.fromCharCode(char) + " : " +char, end="");
         //process.stdout.write(String.fromCharCode(char) + " : " +char)
         if (char >= 65 && char <= 90) {
-            char = ((char-65 + 13) % 26)+65;        
+            char = ((char-65 + 13) % 26)+65;
         }
         //console.log(" -> " + char + " : " + String.fromCharCode(char));
         res.push(char);

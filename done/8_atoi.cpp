@@ -1,5 +1,5 @@
 ﻿/**
-    @author [mst] 
+    @author [mst]
     @file   8_atoi.cpp
     @brief  leetcode problems series
 
@@ -51,7 +51,7 @@ public:
 		char c = s[i];
 
 		while (c){
-			
+
 			switch (c) {
 
 			case '-':
@@ -60,7 +60,7 @@ public:
 				neg = true;
 				break;
 			case '+':
-				if (pos) return 0; // allow only a single occurance of the plus sign				
+				if (pos) return 0; // allow only a single occurance of the plus sign
 				if (n != 0) return n*((neg) ? (-1) : 1); // no plus sign after the number has started
 				else if (neg) return 0;
 				pos = true;
@@ -92,7 +92,7 @@ public:
 };
 
 
-class Solution {	
+class Solution {
 public:
 	// Implement atoi which converts a string to a 32-bit signed integer.
 	int myAtoi(string s) {
@@ -132,11 +132,11 @@ public:
 
 			default:
 				return res * sign;	// exit loop on any other char
-				break;	
+				break;
 			}
 			i++;
 		}
-		
+
 		return res*sign;
 	}	// eo: myAtoi
 };

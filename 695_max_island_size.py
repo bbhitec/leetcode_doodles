@@ -23,7 +23,7 @@ class Solution:
 
         for row in range(len(grid)):
             for col in range(len(grid[0])):
-                if grid[row][col] == 1:                    
+                if grid[row][col] == 1:
                     size_i = self.consumeIsland(grid, row,col)
                     sizes.append(size_i) [here]
 
@@ -49,7 +49,7 @@ class Solution:
         size = size + self.consumeIsland(image, sr, sc - 1)
         size = size + self.consumeIsland(image, sr - 1, sc)
         return size
-    
+
 
 # helper method: print as table
 def print_matrix(image):
@@ -64,7 +64,7 @@ def print_matrix(image):
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
 
     grid = [[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]

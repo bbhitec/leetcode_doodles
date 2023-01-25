@@ -22,8 +22,8 @@ process.stdin.on('end', _ => {
     inputString = inputString.trim().split('\n').map(string => {
         return string.trim();
     });
-    
-    main();    
+
+    main();
 });
 
 function readLine() {
@@ -37,11 +37,11 @@ function regexVar() {
     //
     let re = /^([aeiou]).+\1$/;
     return re;
-    
-    
-    // 
+
+
+    //
     // Do not remove the return statement
-    // 
+    //
     return re;
 }
 
@@ -51,14 +51,14 @@ function main() {
     //const s = readLine();
 
     r1.question('Give me a number, I\'ll add five! ', function(num) {
-    
+
         // Tell JS this is a number
         num = parseInt(num);
         console.log(num + 5);
         // Close, or it will keep reading forever
         r1.close();
     })
-    
+
     // console.log(re.test(s));
     //console.log(re.test(s));
 }
@@ -70,7 +70,7 @@ function main() {
 //     }
 //     return num * factorial(num - 1);
 //   }
-  
+
 //   let n = factorial(8);
 //   console.log(n); // 40320
 
@@ -95,7 +95,7 @@ process.stdin.on('end', _ => {
         return string.trim();
     });
 
-    main();    
+    main();
 });
 
 function readLine() {
@@ -123,7 +123,7 @@ function day3() {
             console.log(e.message);
             console.log(s);
         }
-        
+
     }
     //reverseString("1234");
     reverseString(Number(1234));
@@ -144,8 +144,8 @@ function day78() {
         // It must match ALL occurrences of numbers in a string.
         let re = /\d+/g;
 
-        
-        
+
+
         /*
          * Do not remove the return statement
          */
@@ -159,7 +159,7 @@ function day78() {
     //console.log(!!s.match(re));
 
     const r = s8.match(re);
-    
+
     for (const e of r) {
         console.log(e);
     }

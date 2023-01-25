@@ -23,7 +23,7 @@ class ListNode:
 def make_list(nums):
     if not nums:
         return None
-    
+
     head = ListNode(nums[0])
     p = head
     for n in nums[1::]:
@@ -64,7 +64,7 @@ class Solution2:
                     prev_head = prev_head.next
                 else:
                     #Unlink the node from linked list
-                    prev_head.next =  temp_head.next              
+                    prev_head.next =  temp_head.next
             else:
                 #if it is not first node then prev_head to prev_head.next
                 if(temp_head!=prev_head):
@@ -102,7 +102,7 @@ class Solution:
 
         # if head.val == val:
         #     return head.next
-            
+
 
         prev = head
         curr = head
@@ -139,9 +139,9 @@ class Solution1:
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution1()
-       
+
     # testing
     case, val = [1,2,6,3,4,5,6], 6
     # case, val = [], 1
@@ -151,7 +151,7 @@ def main():
     print (f"{val=}")
     l1r = sol.removeElements(l1, val)
     print_list(l1r)
-    
+
 
 
 if __name__ == ("__main__"):

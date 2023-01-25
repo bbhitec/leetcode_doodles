@@ -10,7 +10,7 @@ Gains:
 features, changelog:
 -2022.12: -initial draft
 		  -recursive solution submission
-*/ 
+*/
 
 
 ////////////////// LIBS
@@ -22,7 +22,7 @@ using namespace std;
 
 class TreeNode {
 private:
-	
+
 public:
 	int val;
 	TreeNode *left;
@@ -44,7 +44,7 @@ public:
 			val = x;
 			return;
 		}
-		
+
 		if (x <= val) {	// value lesser than the root will be routed left
 			if (left == nullptr){ left = new TreeNode(x); }	// empty left node
 			else {
@@ -55,7 +55,7 @@ public:
 			if (right == nullptr){ right = new TreeNode(x); }	// empty right node
 			else {
 				right->insert(x);	// non empty right node
-			}			
+			}
 		}
 	}
 

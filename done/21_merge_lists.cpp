@@ -1,8 +1,8 @@
 /**
     @author [mst]
-    @file   21_merge_lists.cpp    
+    @file   21_merge_lists.cpp
     @brief  leetcode problems series
-    
+
     You are given the heads of two sorted linked lists list1 and list2.
     Merge the two lists in a one sorted list. The list should be made
     by splicing together the nodes of the first two lists.
@@ -130,7 +130,7 @@ public:
 ////////////////// DRIVER
 int main()
 {
-    using namespace std;    
+    using namespace std;
 	cout << "[mst] 21. Merge Two Sorted Lists doodle" << '\n' << '\n';
 
     //Solution sol;

@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   141_list_cycle.py    
+    @file   141_list_cycle.py
     @brief  leetcode problems series
 
     based on the slightly harder 142 problem
@@ -26,7 +26,7 @@ class ListNode:
 def make_list(nums):
     if not nums:
         return None
-    
+
     head = ListNode(nums[0])
     p = head
     for n in nums[1::]:
@@ -40,7 +40,7 @@ def make_list(nums):
 def make_list_with_cycle(nums, pos):
     if not nums:
         return None
-    
+
     head = ListNode(nums[0])
     p = head
     for n in nums[1::]:
@@ -78,7 +78,7 @@ class Solution:
     def hasCycle(self, head: [ListNode]) -> bool:
         if head is None:
             return False
-        
+
         slow = head
         fast = head
 
@@ -93,7 +93,7 @@ class Solution:
                 return False
             if slow == fast:
                 return True
-                
+
         return False
 
 
@@ -101,7 +101,7 @@ class Solution:
     def append(self, lst: ListNode, value) -> ListNode:
         if not lst:
             return ListNode(value)
-        
+
         p = lst
         while p.next:
             p = p.next
@@ -113,16 +113,16 @@ class Solution:
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
-       
+
     # testing
     list1 = make_list_with_cycle([0,1,2,3], 1)
     # list2 = make_list([1,3,4])
     print(sol.hasCycle(list1))
     # print_list(list3)
 
-    
+
 
 
 if __name__ == ("__main__"):

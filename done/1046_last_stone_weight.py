@@ -12,7 +12,7 @@
 
     gains:
     -python stack operation
-    
+
 
     @version 0.1 2023.01
 '''

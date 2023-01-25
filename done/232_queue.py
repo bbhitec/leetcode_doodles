@@ -1,12 +1,12 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file    232_queue.py    
+    @file    232_queue.py
     @brief  leetcode problems series
-    232. Implement Queue using Stacks    
+    232. Implement Queue using Stacks
     Implement a first in first out (FIFO) queue using only two stacks.
     The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
-    
+
     features, changelog:
     -2022.12: -submission
 
@@ -39,19 +39,19 @@ class MyQueue:
 
     def empty(self) -> bool:
         return len(self.fifo) == 0
-        
+
 
 
 ################## DRIVER
 def main():
     print ("[mst]")
-    
+
     obj = MyQueue()
     obj.push(1)
     param_2 = obj.pop()
     param_3 = obj.peek()
     param_4 = obj.empty()
-    
+
 
 
 if __name__ == ("__main__"):

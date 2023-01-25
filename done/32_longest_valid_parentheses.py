@@ -6,7 +6,7 @@
  gains:
  - algo thinking
  - python vectors and pairs
-	
+
  log
  - 2022.11.27: submission 16% T 7% S
  - 2022.11: initial
@@ -54,22 +54,22 @@ class Solution:
             range = pair[0] - idx -1
             max_legal = max(max_legal,range)
             idx = pair[0]
-        
+
         # final segment
         range = len(s) - idx -1
         max_legal = max(max_legal,range)
 
         return max_legal
-        
+
 # driver
 def main():
     print ("[mst] 32_longest_valid_parentheses")
-    
+
     sol = Solution()
-        
+
     # testing
     case0 = ""
-    case1 = ")()())"    
+    case1 = ")()())"
     case2 = ")()())()"
     case3 = ")()())()()()()()()()()"
 
@@ -79,4 +79,4 @@ def main():
 
 # [mst][demo] this is a check for running via command line
 if __name__ == ("__main__"):
-    main() 
+    main()

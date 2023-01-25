@@ -25,7 +25,7 @@ class Solution:
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
 
     s = "Let's take LeetCode contest"

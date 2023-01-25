@@ -1,10 +1,10 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   451_sort_char_by_freq    
+    @file   451_sort_char_by_freq
     @brief  leetcode problems series
     451. Sort Characters By Frequency
-    
+
     Given a string s, sort it in decreasing order based on the frequency of the characters. The frequency of a character is the number of times it appears in the string.
     Return the sorted string. If there are multiple answers, return any of them.
 
@@ -42,8 +42,8 @@ class Solution:
             output = output + (pair[0] * pair[1])
 
         return output
-        
-        
+
+
 
 
 
@@ -51,15 +51,15 @@ class Solution:
 ################## DRIVER
 def main():
     print ("[mst] 451_sort_char_by_freq")
-    
+
     sol = Solution()
 
-       
+
     # testing
     print(sol.frequencySort("tree"))
     print(sol.frequencySort("cccaaa"))
     print(sol.frequencySort("Aabb"))
-    
+
 
 if __name__ == ("__main__"):
     main()

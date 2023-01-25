@@ -16,7 +16,7 @@
 # go each line adding the relevant members
 # hints from: https://youtu.be/nPVEaB3AjUM
 #
-# sub: 90%T 17%S 
+# sub: 90%T 17%S
 class Solution:
     def generate(self, numRows: int) -> [[int]]:
         # the constraint allows us the initialization
@@ -25,7 +25,7 @@ class Solution:
         for row in range(numRows-1):
             last = res[-1]
             # pseudo-pad the last row
-            tmp = [0] + last + [0]            
+            tmp = [0] + last + [0]
             built = []
             for member in range(len(last) + 1):
                 built.append(tmp[member] + tmp[member+1])
@@ -36,11 +36,11 @@ class Solution:
 
         return res
 
-        
+
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
 
     n = 7

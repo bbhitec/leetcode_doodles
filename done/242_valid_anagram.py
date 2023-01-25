@@ -31,7 +31,7 @@ class Solution:
             if c not in voc: return False
             else:
                 voc[c] = voc[c] - 1
-        
+
         for v in voc:
             if voc[v] != 0: return False
 
@@ -40,7 +40,7 @@ class Solution:
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
 
     s = "anagram"

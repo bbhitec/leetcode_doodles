@@ -1,8 +1,8 @@
 /**
     @author [mst]
-    @file   26_remove_duplicates.cpp    
+    @file   26_remove_duplicates.cpp
     @brief  leetcode problems series
-    
+
     26. Remove Duplicates from Sorted Array
     Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place
     template for new files creation. Return k after placing the final result in the first k slots of nums.
@@ -24,7 +24,7 @@
 #include <vector>
 #include <algorithm>
 
-using namespace std;    
+using namespace std;
 ////////////////// DECL_IMPL
 
 // helper vec printer
@@ -56,10 +56,10 @@ class SolutionUnique {
 public:
     int removeDuplicates(vector<int>& nums) {
         vector<int>::iterator ip;
-        
+
         ip = std::unique(nums.begin(), nums.end());
         int sz = std::distance(nums.begin(), ip);
-        nums.resize(sz);        
+        nums.resize(sz);
         return sz;
     }
 
@@ -71,7 +71,7 @@ public:
 int main()
 {
 	cout << "[mst] 26_remove_duplicates leetcode doodle" << '\n' << '\n';
-    
+
     SolutionUnique sol2;
     vector<int> result{0,0,1,1,1,2,2,3,3,4};
     cout << "Example 1:" << endl;
@@ -85,7 +85,7 @@ int main()
     cout << "Example 1:" << endl;
     print_vec(result2);
     cout << sol1.removeDuplicates(result2) << endl;
-    print_vec(result2);   
-    
+    print_vec(result2);
+
 	return 0;
 }

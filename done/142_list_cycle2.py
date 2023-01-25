@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   142_list_cycle2.py    
+    @file   142_list_cycle2.py
     @brief  leetcode problems series
     142. Linked List Cycle II
     Given the head of a linked list, return the node where the cycle begins. If there is no cycle, return null.
@@ -32,7 +32,7 @@ class ListNode:
 def make_list(nums):
     if not nums:
         return None
-    
+
     head = ListNode(nums[0])
     p = head
     for n in nums[1::]:
@@ -46,7 +46,7 @@ def make_list(nums):
 def make_list_with_cycle(nums, pos):
     if not nums:
         return None
-    
+
     head = ListNode(nums[0])
     p = head
     for n in nums[1::]:
@@ -98,7 +98,7 @@ class Solution:
     def detectCycle(self, head: ListNode) -> ListNode:
         if head is None:
             return None
-        
+
         slow = head
         fast = head
         entry = head
@@ -127,7 +127,7 @@ class Solution:
     def append(self, lst: ListNode, value) -> ListNode:
         if not lst:
             return ListNode(value)
-        
+
         p = lst
         while p.next:
             p = p.next
@@ -140,16 +140,16 @@ class Solution:
 ################## DRIVER
 def main():
     print ("[mst] 142_list_cycle2")
-    
+
     sol = Solution()
-       
+
     # testing
     list1 = make_list_with_cycle([0,1,2,3], 1)
     # list2 = make_list([1,3,4])
     print(sol.detectCycle(list1))
     # print_list(list3)
 
-    
+
 
 
 if __name__ == ("__main__"):

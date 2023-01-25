@@ -18,7 +18,7 @@
 // features, changelog:
 // -2021.01: -initial draft
 //           -follow up to a stuck progress in python
-// 
+//
 
 
 ////////////////// LIBS
@@ -33,7 +33,7 @@ class Solution {
 public:
 	vector<vector<string>> solveNQueens(int n) {
 		vector<vector<string>> solutions;
-		
+
 
 		return solutions;
 	}

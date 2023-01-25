@@ -1,11 +1,11 @@
 /**
     @author [mst]
-    @file   <filename>.<extension>    
+    @file   <filename>.<extension>
     @brief  title or quick description
     full/optional description: this is a placeholder
     template for new files creation
-    
-    
+
+
     Gains:
     -
 
@@ -30,7 +30,7 @@
 int main()
 {
     using namespace std;
-    
+
 	cout << "[mst] doodle" << '\n' << '\n';
 
 	cin.get(); // pseudo-pause the console

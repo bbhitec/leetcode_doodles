@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   876_middle_of_list.py    
+    @file   876_middle_of_list.py
     @brief  leetcode problems series
     876. Middle of the Linked List
     You are given the heads of two sorted linked lists list1 and list2.
@@ -24,7 +24,7 @@ class ListNode:
 def make_list(nums):
     if not nums:
         return None
-    
+
     head = ListNode(nums[0])
     p = head
     for n in nums[1::]:
@@ -61,7 +61,7 @@ class Solution:
     def append(self, lst: ListNode, value) -> ListNode:
         if not lst:
             return ListNode(value)
-        
+
         p = lst
         while p.next:
             p = p.next
@@ -74,15 +74,15 @@ class Solution:
 ################## DRIVER
 def main():
     print ("[mst] 876_middle_of_list")
-    
+
     sol = Solution()
-       
+
     # testing
     list1 = make_list([1,2,3,4,5])
     # list2 = make_list([1,3,4])
     list3 = sol.middleNode(list1)
     print_list(list3)
-    
+
 
 
 if __name__ == ("__main__"):

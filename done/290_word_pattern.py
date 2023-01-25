@@ -14,7 +14,7 @@
     s does not contain any leading or trailing spaces.
     All the words in s are separated by a single space.
 
-    
+
     Gains:
 
     features, changelog:
@@ -52,7 +52,7 @@ class Solution:
 
 
 ################## DRIVER
-def main():    
+def main():
     sol = Solution()
 
     pattern, s = "abba", "dog cat cat dog"

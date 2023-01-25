@@ -2,7 +2,7 @@
 '''
     @author [mst]
     @brief  leetcode problems series
-    387_first_unique 
+    387_first_unique
 
     gains:
     -python dict basics
@@ -31,12 +31,12 @@ class Solution:
                 return numset[x]
 
         return -1
-            
+
 
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
     s = "leetcode"
     #s = "loveleetcode"

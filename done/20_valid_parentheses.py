@@ -1,5 +1,5 @@
 '''
- [mst] 20_valid_parentheses.py 
+ [mst] 20_valid_parentheses.py
  leetcode problems series
     20. Valid Parentheses
     Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
@@ -11,7 +11,7 @@
  gains:
  - algorithmic thinking
  - python basic data types
-	
+
  log
  - 2022.11: initial
 
@@ -44,7 +44,7 @@ class Solution:
                     p = stack.pop()
                     print (f"popping \'{p}\'...")
                     if ( c == openings[p] ):
-                        print ("order preserved!")                        
+                        print ("order preserved!")
                     else:
                         print ("order violated!")
                         return False
@@ -77,13 +77,13 @@ class Solution2:
 # driver
 def main():
     print ("[mst] 20_valid_parentheses")
-    
+
     sol = Solution()
     sol2 = Solution2()
 
     opcl = dict(('()', '[]', '{}'))
     print(opcl)
-        
+
     # testing
     print (sol.isValid("("))
     print (sol.isValid("()"))
@@ -93,4 +93,4 @@ def main():
 
 # [mst][demo] this is a check for running via command line
 if __name__ == ("__main__"):
-    main() 
+    main()

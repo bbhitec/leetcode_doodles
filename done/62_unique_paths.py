@@ -25,19 +25,19 @@
 class Solution0:
     def uniquePaths(self, m: int, n: int) -> int:
 
-        
+
         def dfs(self, r: int, c: int)  -> int:
             if r == (m-1) and c == (n-1):
                 return 1 # reached the target
 
             if r == (m-1):
-                return 0 + dfs (self, r, c+1)            
+                return 0 + dfs (self, r, c+1)
             if c == (n-1):
                 return 0 + dfs(self, r+1,c)
 
             return 0 + dfs (self, r, c+1)  + dfs(self, r+1,c)
 
-        paths = dfs(self, 0,0)       
+        paths = dfs(self, 0,0)
         return paths
 
 
@@ -58,7 +58,7 @@ class Solution1:
         down = n-1
         all_steps = right + down
 
-        paths = math.factorial(all_steps)//(math.factorial(down) * math.factorial(right))        
+        paths = math.factorial(all_steps)//(math.factorial(down) * math.factorial(right))
         return paths
 
 # DP approach
@@ -77,7 +77,7 @@ class Solution:
         for i in range(1,m):
             for j in range(1,n):
                 memo[i][j] = memo[i-1][j] + memo[i][j-1]
-                
+
 
         # for i in range(1,m):
         #     for j in range(1,n):

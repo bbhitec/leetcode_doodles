@@ -95,7 +95,7 @@ def days30_arrays():
            [0,0,1,2,4,0]]
 
     max_sum = (6*6*(-9))
-        
+
     # matrix dimensions are hard coded 6x6
     for i in range(1,5):
         for j in range(1,5):
@@ -106,13 +106,13 @@ def days30_arrays():
     print(max_sum)
 
 
-def py_lists():    
+def py_lists():
     N = int(input())
     l1 = []
     for i in range(N):
         # [demo] treating variable elements inputs
         line = input().split()
-        
+
         if line[0] == "print":
             print(l1)
         elif line[0] == "insert":
@@ -137,7 +137,7 @@ def count_substring():
     for i in range(len(string)-sub_length+1):
         if (string[i:i+sub_length] == sub_string):
             count += 1
-    
+
     print (count)
     return count
 
@@ -149,12 +149,12 @@ def print_rangoli(n):
     # [demo] a string with all lowercase letters
     alpha = string.ascii_lowercase
     print(alpha)
-    
+
     L = []
     for i in range(n):
         s = "-".join(alpha[i:n])
         L.append((s[::-1]+s[1:]).center(4*n-3, "-"))
-        
+
     print('\n'.join(L[:0:-1]+L))
 
 ################## DRIVER

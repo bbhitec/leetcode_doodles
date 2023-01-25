@@ -1,10 +1,7 @@
 /**
     @author [mst]
-    @file   <filenme>.<extension>    
     @brief  HackerRank solutions doodle space
-    
-    Gains:
-    -
+
 
     @version 0.1 2022.12
 */
@@ -16,6 +13,7 @@
 #include <bits/stdc++.h>        // usage of: find_if
 
 using namespace std;
+
 
 
 ////////////////// DECL_IMPL
@@ -42,18 +40,18 @@ vector<int> countingSort(vector<int> arr) {
 
 int simpleArraySum(vector<int> ar) {
     int sum = 0;
-    
+
     for (auto i = ar.begin(); i != ar.end(); ++i) {
         sum += *i;
     }
-    
+
     return sum;
 }
 
-void miniMaxSum(vector<int> arr) {    
+void miniMaxSum(vector<int> arr) {
     long long sum_all = 0;
 
-    for (auto n : arr) { 
+    for (auto n : arr) {
         sum_all += n;
     }
     long long min = sum_all;
@@ -70,28 +68,6 @@ void miniMaxSum(vector<int> arr) {
 }
 
 
-// some input processing from HR
-string ltrim(const string &str) {
-    string s(str);
-
-    s.erase(
-        s.begin(),
-        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
-    );
-
-    return s;
-}
-
-string rtrim(const string &str) {
-    string s(str);
-
-    s.erase(
-        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
-        s.end()
-    );
-
-    return s;
-}
 
 //printing the 2D vector
 void print2Dvec (vector<vector<int>> s) {
@@ -105,7 +81,7 @@ void print2Dvec (vector<vector<int>> s) {
     }
 
 }
-    
+
 
 ///// individuals:
 
@@ -127,72 +103,156 @@ vector<string> split(const string &str) {
 }
 
 int utopianTree(int n) {
-    
+
     int size = 1;
     int period = 0;
-    
+
     while (n) {
         size = (period)?size+1:size*2;
-        period ^= 1; 
-        n--;        
+        period ^= 1;
+        n--;
     }
-    
+
     return size;
 }
 
-int formingMagicSquare(vector<vector<int>> s) {
-    //[here]
-    int row_sum = 15;
-    int all_sum = 45;
-    int sum = 0;
+int formingMagicSquare() {//vector<vector<int>> s) {
 
-    for (auto it : s) {
-        for (auto ij : it) {
-            // cout << ij << " ";
-            sum+=ij;
+    // input string
+    // vector<vector<int>> s{
+    //     { 1, 2, 3 }, //comma separated lists
+    //     { 5, 6, 7 },
+    //     { 8, 9, 3 }
+    // };
+    vector<vector<int>> s{
+        {4,9,2},
+        {3,5,7},
+        {8,1,5}
+    };
+
+    print2Dvec (s);
+
+    // premeditated eight possible magic squares
+    // const int magic_squares_3x3[8][9] = {
+    //     {8, 1, 6, 3, 5, 7, 4, 9, 2},
+    //     {4, 3, 8, 9, 5, 1, 2, 7, 6},
+    //     {2, 9, 4, 7, 5, 3, 6, 1, 8},
+    //     {6, 7, 2, 1, 5, 9, 8, 3, 4},
+    //     {6, 1, 8, 7, 5, 3, 2, 9, 4},
+    //     {8, 3, 4, 1, 5, 9, 6, 7, 2},
+    //     {4, 9, 2, 3, 5, 7, 8, 1, 6},
+    //     {2, 7, 6, 9, 5, 1, 4, 3, 8}
+    // };
+
+    vector<vector<vector<int>>> squares_3x3{
+        {{8, 1, 6}, {3, 5, 7}, {4, 9, 2}},
+        {{4, 3, 8}, {9, 5, 1}, {2, 7, 6}},
+        {{2, 9, 4}, {7, 5, 3}, {6, 1, 8}},
+        {{6, 7, 2}, {1, 5, 9}, {8, 3, 4}},
+        {{6, 1, 8}, {7, 5, 3}, {2, 9, 4}},
+        {{8, 3, 4}, {1, 5, 9}, {6, 7, 2}},
+        {{4, 9, 2}, {3, 5, 7}, {8, 1, 6}},
+        {{2, 7, 6}, {9, 5, 1}, {4, 3, 8}}
+    };
+
+    int min_cost = 999;
+
+    // calculate deviation from each possible magic square
+    for (int option = 0; option < 8; option++) {
+        int cost = 0;
+        for (int i = 0; i < 3; i ++)
+            for (int j = 0; j < 3; j++)
+                cost += abs(s[i][j] - squares_3x3[option][i][j]);
+        if (cost < min_cost) min_cost = cost;
+    }
+
+    cout << "result: " << min_cost << endl;
+    return min_cost;
+}
+
+// multiplication of two long ass numbers represented as strings
+string longMultiply(string &num1, string num2) {
+    string res;
+    int x, y, c, n1_length, n2_length, l, k, sum, carry;
+    char digit;
+
+    n1_length = num1.size() - 1;
+    n2_length = num2.size() - 1;
+    carry = 0;
+
+    // we start from the rightmost digit of each long number
+    for (int i_n1 = n1_length; i_n1 >= 0; i_n1--) {
+        for (int i_n2 = n2_length; i_n2 >= 0; i_n2--) {
+            l = res.size() - 1;
+            x = num1[i_n1] - '0';
+            y = num2[i_n2] - '0';
+            k = (n1_length-i_n1) + (n2_length-i_n2);
+
+            if (l >= k)
+                c = res[l-k] - '0';
+            else
+                c = 0;
+
+            sum = x * y + c + carry;
+            carry = sum / 10;
+            digit = char(sum % 10 + '0');
+
+            if (l >= k)
+                res[l-k] = digit;
+            else
+                res.insert(0, &digit, 1);
+
+            if (i_n2 == 0 && carry) {
+                digit = char(carry + '0');
+                res.insert(0, &digit, 1);
+                carry = 0;
+            }
         }
     }
-    cout << sum << endl;
+
+    return res[0] == '0' ? "0" : res;
+}
+void extraLongFactorials(int n) {
+    string s = "1";
+    for (int i = 1; i <= n; ++i) {
+        // this is the actual n! = n*(n-1)*(n-2)*...*1 (in reverse)
+        s = longMultiply(s, to_string(i));
+    }
+    cout << s << endl;
 }
 
 ////////////////// DRIVER
-int main()
-{
-	cout << "[mst] hackerrank doodle" << '\n' << '\n';
-    int result = 0;
+int main() {
+	cout << "[mst] hackerrank doodle" << endl;
 
-    // string ar_count_temp;
-    // getline(cin, ar_count_temp);
-    // int ar_count = stoi(ltrim(rtrim(ar_count_temp)));
-    // string ar_temp_temp;
-    // getline(cin, ar_temp_temp);
-    // vector<string> ar_temp = split(rtrim(ar_temp_temp));
-    // vector<int> ar(ar_count);
-    // for (int i = 0; i < ar_count; i++) {
-    //     int ar_item = stoi(ar_temp[i]);
-    //     ar[i] = ar_item;
-    // }
-
+    // cout << "hackerrank simpleArraySum" << endl;
+    // int result = 0;
     // result = simpleArraySum({1,3});
     // cout << result << endl;
 
+
+    // cout << "hackerrank miniMaxSum" << endl;
     // miniMaxSum({1, 2, 3, 4, 5});
     // miniMaxSum({156873294, 719583602, 581240736, 605827319, 895647130});
 
+
+    // cout << "hackerrank countingSort" << endl;
     // vector<int> arr3 = {63,25,73,1,98,73,56,84,86,57,16,83,8,25,81,56,9,53,98,67,99,12,83,89,80,91,39,86,76,85,74,39,25,90,59,10,94,32,44,3,89,30,27,79,46,96,27,32,18,21,92,69,81,40,40,34,68,78,24,87,42,69,23,41,78,22,6,90,99,89,50,30,20,1,43,3,70,95,33,46,44,9,69,48,33,60,65,16,82,67,61,32,21,79,75,75,13,87,70,33};
     // vector<int> arr3_res = countingSort(arr3);
     // printVec(arr3_res);
 
-    //cout <<  utopianTree(1);
 
-    vector<vector<int> > s{
-        { 1, 2, 3 }, //comma separated lists
-        { 5, 6, 7 },
-        { 8, 9, 3 }
-    };
-    print2Dvec (s);
-    cout << formingMagicSquare(s);
-    
+    // https://www.hackerrank.com/challenges/utopian-tree/problem
+    // cout << "hackerrank utopianTree" << endl;
+    // cout <<  utopianTree(10) << endl;
+
+
+    cout << "hackerrank formingMagicSquare" << endl;
+    formingMagicSquare();
+
+
+    // cout << "hackerrank extraLongFactorials" << endl;
+    // extraLongFactorials(25);
 
     return 0;
 }

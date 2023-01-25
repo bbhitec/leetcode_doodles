@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   328_odd_even_list.py    
+    @file   328_odd_even_list.py
     @brief  leetcode problems series
     328. Odd Even Linked List
     Given the head of a singly linked list, group all the nodes with odd indices together followed by the nodes with even indices, and return the reordered list.
@@ -27,7 +27,7 @@ class ListNode:
 def make_list(nums):
     if not nums:
         return None
-    
+
     head = ListNode(nums[0])
     p = head
     for n in nums[1::]:
@@ -49,7 +49,7 @@ class Solution0:
         if head == None:
             return None
 
-        
+
         even_head = head
         if (head.next is not None): odd_head = head.next
         odd = odd_head
@@ -65,12 +65,12 @@ class Solution0:
 
 # snipped from solutions :(
 #
-# sub: 
+# sub:
 class Solution:
     def oddEvenList(self, head: ListNode) -> ListNode:
         if head is None:
             return head
-            
+
         currentOdd = head
         count = 2
         node = head
@@ -94,17 +94,17 @@ class Solution:
 ################## DRIVER
 def main():
     print ("[mst] 328. Odd Even Linked List")
-    
+
     sol = Solution()
 
-       
+
     # testing
     case = [1,2,3,4,5]
     l1 = make_list(case)
     print_list(l1)
     l1r = sol.oddEvenList(l1)
     print_list(l1r)
-    
+
 
 
 if __name__ == ("__main__"):

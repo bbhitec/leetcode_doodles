@@ -125,7 +125,7 @@ public:
 	}
 
 	// print the graph's adjacency list
-	// use reference to vector of vectors to avoid unnecessary copying 
+	// use reference to vector of vectors to avoid unnecessary copying
 	void print_adjacency(vector<vector<int>> adj, int N) {
 		cout << "Adjacency list (edges list): " << endl;
 
@@ -144,7 +144,7 @@ void print_vec(vector<T> vec) {
 	cout << "[";
 	int i{ 0 };
 	for (const auto &member : vec) {
-		cout << member;	
+		cout << member;
 		if (i < vec.size() - 1) { // [demo] manual index in for-each loop. conditonal semicolon
 			cout << ",";
 			i++;

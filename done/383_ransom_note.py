@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   383_ransom_note.py    
+    @file   383_ransom_note.py
     @brief  leetcode problems series
     383. Ransom Note
     Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
@@ -71,5 +71,4 @@ def main():
 # [mst][demo] this is a check for running via command line
 if __name__ == ("__main__"):
     main()
-    
-        
+

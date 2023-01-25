@@ -1,5 +1,5 @@
 /**
-    @author [mst] 
+    @author [mst]
     @file   2_add_two_numbers.cpp
     @brief  leetcode problems series
 
@@ -79,7 +79,7 @@ void addTailList(ListNode* &head, int val) {
     ListNode* ptr = head;
     while (ptr->next) {
         ptr = ptr->next;
-    }    
+    }
     ptr->next = NewNode;
 }
 
@@ -93,7 +93,7 @@ public:
         int carry = 0;
         while (l1 && l2) {
             add = l1->val + l2->val + carry;
-            addTailList(res,(add % 10));            
+            addTailList(res,(add % 10));
             carry = add / 10;
 
             l1 = l1->next;
@@ -110,14 +110,14 @@ public:
 
         while (lremainder) {
             add = lremainder->val + carry;
-            addTailList(res,(add % 10)); 
+            addTailList(res,(add % 10));
             carry = add / 10;
 
             lremainder = lremainder->next;
         }
 
         // dont forget the carry
-        if (carry) addTailList(res, carry); 
+        if (carry) addTailList(res, carry);
 
         return res;
     }
@@ -131,7 +131,7 @@ int main()
     // even worse in a header file as would foce including in all users
     using namespace std;
 
-    // [bp] using endl would force a flush.                            
+    // [bp] using endl would force a flush.
     cout << "[mst] 2_add_two_numbers doodle" << '\n' << '\n';
     Solution sol1;
 
@@ -153,8 +153,8 @@ int main()
     addTailList (l6,9);
     addTailList (l6,9);
     addTailList (l6,9);
-    addTailList (l6,9);  
-    
+    addTailList (l6,9);
+
     // [bp] again, encapsulating prints would be better for a proper package
     //l1->printList();
     //l2->printList();
@@ -183,7 +183,7 @@ int main()
     cout << endl;
     // pre-build lists [wip] make builder function?
     ListNode* l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
-    ListNode* l2 = new ListNode(5, new ListNode(6, new ListNode(4)));   
+    ListNode* l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
     printList(l1);
     printList(l2);
     printList(sol1.addTwoNumbers(l1,l2));

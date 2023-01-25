@@ -40,7 +40,7 @@ class Solution:
         # print (res)
         return res
 
-        
+
 
 
 ################## DRIVER
@@ -48,7 +48,7 @@ def main():
     sol = Solution()
 
     # words = ["i","love","leetcode","i","love","coding"]
-    # k = 2        
+    # k = 2
     # print(f"{sol.topKFrequent(words, k)=}")
 
     # words = ["the","day","is","sunny","the","the","the","sunny","is","is"]

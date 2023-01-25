@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   21_merge_lists.py    
+    @file   21_merge_lists.py
     @brief  leetcode problems series
     21. Merge Two Sorted Lists
     You are given the heads of two sorted linked lists list1 and list2.
@@ -24,7 +24,7 @@ class ListNode:
 def make_list(nums):
     if not nums:
         return None
-    
+
     head = ListNode(nums[0])
     p = head
     for n in nums[1::]:
@@ -51,7 +51,7 @@ class Solution:
     def mergeTwoLists(self, list1: ListNode, list2: ListNode) -> ListNode:
         if not list1:
             return list2
-        if not list2: 
+        if not list2:
             return list1
         # if both are null we will return null
 
@@ -66,7 +66,7 @@ class Solution:
             else:
                 l3 = self.append(l3,l2.val)
                 l2 = l2.next
-        
+
         if l1:
             leftover = l1
         if l2:
@@ -80,7 +80,7 @@ class Solution:
     def append(self, lst: ListNode, value) -> ListNode:
         if not lst:
             return ListNode(value)
-        
+
         p = lst
         while p.next:
             p = p.next
@@ -93,15 +93,15 @@ class Solution:
 ################## DRIVER
 def main():
     print ("[mst] 21_merge_lists")
-    
+
     sol = Solution()
-       
+
     # testing
     list1 = make_list([1,2,4])
     list2 = make_list([1,3,4])
     list3 = sol.mergeTwoLists(list1, list2)
     print_list(list3)
-    
+
 
 
 if __name__ == ("__main__"):

@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   88_merge_sorted.py    
+    @file   88_merge_sorted.py
     @brief  leetcode problems series
     88. Merge Sorted Array
     You are given two integer arrays nums1 and nums2, sorted in non-decreasing order,
@@ -60,7 +60,7 @@ class Solution:
 ################## DRIVER
 def main():
     print ("[mst]")
-    
+
     sol = Solution()
 
     nums1 = [1,2,3,0,0,0]

@@ -15,7 +15,7 @@ Gains:
 features, changelog:
 -2022.12: -initial draft
 		  -recursive solution submission
-*/ 
+*/
 
 
 ////////////////// LIBS
@@ -59,7 +59,7 @@ public:
             fibo_memo[i] = fibo_memo[i-1] + fibo_memo[i-2];
         }
 
-        return fibo_memo[n];    // we have the required value        
+        return fibo_memo[n];    // we have the required value
     }
 };
 

@@ -24,7 +24,7 @@ class ListNode:
 def make_list(nums):
     if not nums:
         return None
-    
+
     head = ListNode(nums[0])
     p = head
     for n in nums[1::]:
@@ -51,7 +51,7 @@ class Solution:
         b = head
 
         while tail.next:
-            if n>1:                
+            if n>1:
                 n = n-1
             else:
                 b = p   # remember prev node
@@ -69,9 +69,9 @@ class Solution:
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
-       
+
     # testing
     case, n = [1,2,3,4,5], 5
     l1 = make_list(case)
@@ -79,7 +79,7 @@ def main():
     print (f"{n=}")
     l1r = sol.removeNthFromEnd(l1, n)
     print_list(l1r)
-    
+
 
 
 if __name__ == ("__main__"):

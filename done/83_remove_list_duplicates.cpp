@@ -76,7 +76,7 @@ void addTailList(ListNode* &head, int val) {
     ListNode* ptr = head;
     while (ptr->next) {
         ptr = ptr->next;
-    }    
+    }
     ptr->next = NewNode;
 }
 
@@ -85,7 +85,7 @@ void addTailList(ListNode* &head, int val) {
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
-        
+
         // [bp] maintain original head pointer, use a traversal help pointer
         ListNode* p = head;
 
@@ -93,7 +93,7 @@ public:
             while ((p->next != nullptr) && (p->val == p->next->val)) {
                 // [bp] here, using and deleting a temporary pointer
                 // is bp, but gave a lower space score
-                //ListNode* c = p->next;                
+                //ListNode* c = p->next;
                 //p->next = c->next;
                 //delete(c);
                 p->next = p->next->next;
@@ -108,7 +108,7 @@ public:
 ////////////////// DRIVER
 int main()
 {
-    using namespace std;    
+    using namespace std;
 	cout << "[mst] 83_remove_list_duplicates doodle" << '\n' << '\n';
 
     Solution sol1;

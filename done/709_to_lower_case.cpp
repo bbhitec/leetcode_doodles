@@ -14,7 +14,7 @@
 ////////////////// LIBS
 #include <iostream>            // usage of console prints
 #include <string>
-using namespace std;    
+using namespace std;
 
 
 ////////////////// DECL_IMPL
@@ -32,7 +32,7 @@ public:
 
         for (char c : s) {
             if (('A' <= c) && (c <= 'Z')) {
-                s[i] = c + to_lower;                
+                s[i] = c + to_lower;
             }
             i++;
         }

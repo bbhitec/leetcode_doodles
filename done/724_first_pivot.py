@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   724_first_pivot.py    
+    @file   724_first_pivot.py
     @brief  leetcode problems series
     724. Find Pivot Index
     Given an array of integers nums, calculate the pivot index of this array.
@@ -34,7 +34,7 @@ class Solution0:
             if sum_left == sum_right: return pivot
             print(f"{sum_left=}, {pivot=}, {sum_right=}")
             sum_left = sum_right = 0
-                        
+
         return -1
 
 # first sum the array elements with O(n)
@@ -52,17 +52,17 @@ class Solution:
             if pivot > 0:
                 sum_left = sum_left + nums[pivot-1]
             if sum_left == (sum_all-nums[pivot]-sum_left): return pivot
-            # print(f"{pivot=}, {sum_left=}, right calc = {(sum_all-nums[pivot]-sum_left)}")    
-                        
+            # print(f"{pivot=}, {sum_left=}, right calc = {(sum_all-nums[pivot]-sum_left)}")
+
         return -1
 
 
 ################## DRIVER
 def main():
     print ("[mst] 724_first_pivot.py")
-    
+
     sol = Solution()
-        
+
     # testing
     case0 = [1,7,3,6,5,6]
     case1 = [1,2,3]

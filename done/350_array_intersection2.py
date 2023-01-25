@@ -1,7 +1,7 @@
 ##!/usr/bin/env python
 '''
     @author [mst]
-    @file   350_array_intersection2.py    
+    @file   350_array_intersection2.py
     @brief  leetcode problems series
     Given two integer arrays nums1 and nums2, return an array of their intersection.
     Each element in the result must appear as many times as it shows
@@ -23,10 +23,10 @@ class Solution:
     def intersect(self, nums1: [int], nums2: [int]) -> [int]:
 
         vocsize = 1001
-        res = []        
+        res = []
         voc1 = [0 for i in range(vocsize)]  # demo - initialize n-sized array
         voc2 = [0 for i in range(vocsize)]
-        
+
         for n in nums1: voc1[n] = voc1[n] + 1
         for n in nums2: voc2[n] = voc2[n] + 1
 
@@ -40,15 +40,15 @@ class Solution:
 
 ################## DRIVER
 def main():
-    
+
     sol = Solution()
 
-       
+
     # testing
     nums1 = [1,2,2,1,10]
     nums2 = [2,2,10]
     print(sol.intersect(nums1,nums2))
-    
+
 
 
 if __name__ == ("__main__"):
