@@ -20,7 +20,7 @@
 
 # Definition for a binary tree node. (taken from leetcode problems)
 class TreeNode:
-    def __init__(self, val=-1, left=None, right=None):
+    def __init__(self, val=None, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
@@ -36,7 +36,7 @@ class TreeNode:
     # insert single node
     def insert(self, x):
         # empty node insertion
-        if self.val == -1:
+        if self.val == None:
             self.val = x
             return
 
@@ -82,10 +82,13 @@ def main():
     q = [1,2,3]
 
     sol = Solution()
-    p_head = TreeNode(p)
-    q_head = TreeNode(q)
-    # p_head.print_inorder()
-    # q_head.print_inorder()
+    p_head = TreeNode()
+    q_head = TreeNode()
+    p_head.insert_arr(p)
+    p_head.insert_arr(q)
+    p_head.print_inorder()
+    print(", ", end='')
+    q_head.print_inorder()
     print(f"trees {p=},{q=} res: {sol.isSameTree(p_head, q_head)=}")
 
 
