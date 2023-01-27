@@ -14,41 +14,89 @@
     -2023.01: -submission
 '''
 
-# one land is spotted, flood fill given island with null value while adding to a counter
-#
-# sub: 29%T 65%S
+# [here] calculating size as-we-go
 class Solution:
     def maxAreaOfIsland(self, grid: [[int]]) -> int:
-        sizes = []
+        def consumeIsland(image: [[int]], sr: int, sc: int, size: int) -> int:
+        # basic cases
+            if (sr >= len(image)) or (sr < 0): return 0
+            if (sc >= len(image[0])) or (sc < 0): return 0
 
+            if image[sr][sc] != 1: return 0
+            else:
+                image[sr][sc] = 0
+                size = size + 1
+
+            r = consumeIsland(image, sr, sc + 1, size)
+            d = consumeIsland(image, sr + 1, sc, size)
+            l = consumeIsland(image, sr, sc - 1, size)
+            u = consumeIsland(image, sr - 1, sc, size)
+
+            return size+ r + d + l + u
+
+
+        size = 0
+        max_size = 0
         for row in range(len(grid)):
             for col in range(len(grid[0])):
                 if grid[row][col] == 1:
-                    size_i = self.consumeIsland(grid, row,col)
-                    sizes.append(size_i) [here]
+                    size = consumeIsland(grid, row, col, 0)
+                    print (size)
+                    if size > max_size: max_size = size
 
-        print(f"{sizes=}")
+        print("after")
+        print_matrix(grid)
+
+        # sizes = [0 for n in range(color)]
+        # for row in grid:
+        #     for col in row:
+        #         if col != 0: sizes[col] = sizes[col] +1
+
+        # print(f"{sizes=}")
+        return 1#max(sizes)
+
+# first, paint individual islands with distinct colors (use fill algoritm)
+# then build an occurance historgram and derive the maximal value
+#
+# sub: 93%T 58%S
+class Solution0:
+    def maxAreaOfIsland(self, grid: [[int]]) -> int:
+        def consumeIsland(image: [[int]], sr: int, sc: int, color):
+        # basic cases
+            if (sr >= len(image)) or (sr < 0): return
+            if (sc >= len(image[0])) or (sc < 0): return
+
+
+            if image[sr][sc] != 1: return
+            else:
+                image[sr][sc] = color
+                #return
+
+            consumeIsland(image, sr, sc + 1, color)
+            consumeIsland(image, sr + 1, sc, color)
+            consumeIsland(image, sr, sc - 1, color)
+            consumeIsland(image, sr - 1, sc, color)
+
+
+        color = 2
+        for row in range(len(grid)):
+            for col in range(len(grid[0])):
+                if grid[row][col] == 1:
+                    consumeIsland(grid, row, col, color)
+                    color = color + 1
+
+        # print("after")
         # print_matrix(grid)
+
+        sizes = [0 for n in range(color)]
+        for row in grid:
+            for col in row:
+                if col != 0: sizes[col] = sizes[col] +1
+
+        # print(f"{sizes=}")
         return max(sizes)
 
-    def consumeIsland(self, image: [[int]], sr: int, sc: int):
-        # basic cases
-        if (sr >= len(image)) or (sr < 0): return 0
-        if (sc >= len(image[0])) or (sc < 0): return 0
 
-        size = 0
-
-        if image[sr][sc] != 1: return 0
-        else:
-            image[sr][sc] = 0
-            size = size + 1
-            return size
-
-        size = size + self.consumeIsland(image, sr, sc + 1)
-        size = size + self.consumeIsland(image, sr + 1, sc)
-        size = size + self.consumeIsland(image, sr, sc - 1)
-        size = size + self.consumeIsland(image, sr - 1, sc)
-        return size
 
 
 # helper method: print as table
