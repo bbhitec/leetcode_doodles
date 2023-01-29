@@ -1,30 +1,18 @@
-/*
-[mst] 226_invert_binary_tree.cpp
-leetcode problems series
+/**
+    @author [mst]
+    @brief  leetcode problems series
+    235_lowest_common_ancestor_bst
+    Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
+	According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
 
-226. Invert Binary Tree
-Example:
-Input :
-    4
-   / \
-  2   7
- / \  / \
-1   3 6  9
-Output:
-    4
-   / \
-  7    2
- / \  / \
-9   6 3  1
+    Gains:
 
-Gains:
--Binary trees behaviour
--Recursive aproach cpp
+    features, changelog:
+    -2023.01:	-initial draft
 
-features, changelog:
--2021.01: -initial draft
-		  -recursive solution submission
+    @version 0.1 2023.01
 */
+
 
 
 ////////////////// LIBS
@@ -99,7 +87,8 @@ public:
 ////////////////// DRIVER
 int main()
 {
-	cout << "[mst] 226_invert_binary_tree doodle" << endl << endl;
+
+	// [here]
 
 	TreeNode tree1;
 
