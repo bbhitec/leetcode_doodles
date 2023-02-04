@@ -2,7 +2,7 @@
     @author [mst]
     @brief  leetcode problems series
     219_contains_duplicate2
-    iven an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.
+    Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.
 
     Gains:
 
@@ -63,9 +63,9 @@ public:
 		// for( const auto& [key, value] : vocabulary )
         // print_key_value(key, value);
 
-        
+
 		return false;
-        
+
     }
 };
 
