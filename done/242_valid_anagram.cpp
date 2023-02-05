@@ -10,9 +10,9 @@
     -histogram mapping and checking
 
     features, changelog:
-    -2023.01:	-initial draft
+    -2023.02:	-initial draft
 
-    @version 0.1 2023.01
+    @version 0.1 2023.02
 */
 
 
@@ -29,7 +29,7 @@ using namespace std;
 
 // build occurence histograms/maps for the given strings and compare the results
 //
-// sub: 95T 61S
+// sub: 95T 85S
 class Solution {
 private:
     // safe case ASCII chars limit
@@ -37,10 +37,9 @@ private:
 public:
     bool isAnagram(string s, string t) {
         int s_size = s.length();
-		int t_size = t.length();
 
         // basic cases
-        if (s.empty() || t.empty() || t_size == 0 || s_size != t_size) {
+        if (s_size != t.length()) {
             return false;
         }
 
@@ -70,9 +69,8 @@ int main()
 	// string s = "anagram", t = "nagaram";
     string s = "a", t = "ab";
 
+
 	cout << "res: " << sol.isAnagram(s,t) << endl;
-
-
 
 	return 0;
 }
