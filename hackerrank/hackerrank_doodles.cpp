@@ -11,6 +11,8 @@
 #include <iostream>            // usage of console prints
 #include <vector>
 #include <bits/stdc++.h>        // usage of: find_if
+#include <stdio.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -221,6 +223,186 @@ void extraLongFactorials(int n) {
     cout << s << endl;
 }
 
+
+int most_freq_idx(int *ar, int sz) {
+    int max_val = -1;
+    int max_idx = -1;
+
+    for (int i=0; i<sz; i++)
+        if (ar[i] > max_val) {
+            max_val = ar[i];
+            max_idx = i;
+        }
+
+    return max_idx;
+}
+
+int equalizeArray(vector<int> arr) {
+    const int sz = 101; // add 1 to hold att[x]=100 safely
+    int map[sz] = {0};
+
+    // build each-num occurence map
+    for (auto it = arr.begin(); it != arr.end(); it++) {
+        map[*it]++;
+    }
+
+    // find the most frequent
+    int dominant = most_freq_idx(map, sz);
+
+    return arr.size() - map[dominant];
+}
+
+
+
+void rotateString(char * a, int n, int flag){
+    if (flag == 0) return; // base case
+
+    // allocate a side char array to build the desired rotation
+    char *temp = (char*) malloc(sizeof(char)*(n+1));
+
+
+    // this
+    char *rotating = a + (int)((flag < 0)?(-flag):(n-flag));
+    char *rotated_p = rotating;
+
+    char *temp_p = temp;
+    // copy from start position
+    while (*rotated_p) {
+        *temp_p = *rotated_p;
+        rotated_p++;
+        temp_p++;
+    }
+
+    char *p = a;    // conserve original pointer
+    // copy remainder
+    while (p != rotating) {
+        *temp_p = *p;
+        p++;
+        temp_p++;
+    }
+
+    // we can return temp here, but we'll copy to the original addresses
+    p = a;
+    temp_p = temp;
+    while (*p) {
+        *p = *temp_p;
+        p++;
+        temp_p++;
+    }
+
+    free(temp);
+
+}
+
+bool isReverseNumber(int num) {
+    int rev = 0;
+
+    int digit = 0;
+    while (0 != num) {
+        digit = num %10;
+        rev = rev*10 + digit;
+        num /= 10;
+    }
+    return (rev == num);
+}
+
+// [wip] typedeffing
+struct node {
+    int key;
+    struct node *next;
+};
+
+// reverse a linked list
+node* reverse2(struct node *n) {
+    if(!n->next) return n;
+        struct node *ret = (struct node *)malloc(sizeof(struct node));
+        ret = reverse2(n->next);
+        n->next->next = n;
+        n->next = NULL;
+        return ret;
+}
+
+// reverse a linked list (iterative)
+struct node * reverse(struct node *n) {
+    if(n == NULL) return NULL;
+        struct node *p,*q,*r;
+        p = n;
+        q = NULL;
+        r = NULL;
+
+        while (p) {
+            r = q;
+            q = p;
+            p = p->next;
+            q->next = r;
+        }
+
+        return q;
+}
+
+// add a new node to a given list with a value 'val'
+void addToTail(struct node *head, int val) {
+    struct node *NewNode = (struct node *)malloc(sizeof(struct node));
+    NewNode->key = val;
+    NewNode->next = NULL;
+
+    if (head == NULL) {
+        head = NewNode;
+        return;
+    }
+
+    struct node *ptr = head;
+    while (ptr && ptr->next) {
+        ptr = ptr->next;
+    }
+    ptr->next = NewNode;
+
+    return;
+}
+
+
+int sumLinkedList(struct node * h1, struct node * h2) {
+    // we will reverse the two lists for an extra O(n) runtime
+    h1 = reverse(h1);
+    h2 = reverse(h2);
+
+    // assisting variables
+    int res = 0; // resulting number
+    int sum = 0;
+    int carry = 0;
+
+    while (h1 && h2) {
+        sum = h1->key + h2->key + carry;
+        res = res + (0==res)? sum%10 : (10*(sum%10));   // [here]
+        // use for https://leetcode.com/problems/add-two-numbers-ii/solutions/
+        carry = sum / 10;
+
+        h1=h1->next;
+        h2=h2->next;
+    }
+
+    // consider the remainder
+    struct node *rem;
+    if (h1) {
+        rem = h1;
+    } else {
+        rem = h2;
+    }
+
+    while (rem) {
+        sum = rem->key + carry;
+        res = res + 10*(sum%10);
+        carry = sum / 10;
+
+        rem = rem->next;
+    }
+
+    if (carry) res = res + carry*10;
+
+    return res;
+}
+
+
 ////////////////// DRIVER
 int main() {
 	cout << "[mst] hackerrank doodle" << endl;
@@ -246,13 +428,64 @@ int main() {
     // cout << "hackerrank utopianTree" << endl;
     // cout <<  utopianTree(10) << endl;
 
-
-    cout << "hackerrank formingMagicSquare" << endl;
-    formingMagicSquare();
-
+    // cout << "hackerrank formingMagicSquare" << endl;
+    // formingMagicSquare();
 
     // cout << "hackerrank extraLongFactorials" << endl;
     // extraLongFactorials(25);
+
+    // cout << "hackerrank equalizeArray" << endl;
+    // cout << equalizeArray({1,2,3,1,2,3,3,3}) << endl;
+
+
+    // char *str = (char*)malloc(sizeof(char)*15);
+    // strcpy(str, "I am very happy");
+    // rotateString(str,15, 4);
+    // free(str);
+
+
+    // rafael test series
+    // isReverseNumber(5005);
+
+
+
+    // [here]
+    //6258
+    // struct node *h1;
+
+    // manual 62
+    struct node *h1 = (struct node *)malloc(sizeof(struct node));
+    h1->key = 6;
+    h1->next = (struct node *)malloc(sizeof(struct node));
+    h1->next->key = 2;
+    h1->next->next = NULL;
+
+
+    // addToTail(h1,6);
+    // addToTail(h1,2);
+    // addToTail(h1,5);
+    // addToTail(h1,8);
+
+    //45
+    // struct node *h2;
+
+    // manual 98
+    struct node *h2 = (struct node *)malloc(sizeof(struct node));
+    h2->key = 9;
+    h2->next = (struct node *)malloc(sizeof(struct node));
+    h2->next->key = 8;
+    h2->next->next = NULL;
+    // addToTail(h1,4);
+    // addToTail(h1,5);
+
+
+    cout << sumLinkedList(h1, h2) << endl;
+
+
+
+
+
+
 
     return 0;
 }
