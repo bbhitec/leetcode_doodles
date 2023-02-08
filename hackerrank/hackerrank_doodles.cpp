@@ -402,6 +402,23 @@ int sumLinkedList(struct node * h1, struct node * h2) {
     return res;
 }
 
+// You are given  queries in the form of , , and  representing the respective positions for cats  and , and for mouse . Complete the function  to return the appropriate answer to each query, which will be printed on a new line.
+// If cat  catches the mouse first, print Cat A.
+// If cat  catches the mouse first, print Cat B.
+// If both cats reach the mouse at the same time, print Mouse C as the two cats fight and mouse escapes.
+string catAndMouse(int x, int y, int z) {
+    string xS = "Cat A";
+    string yS = "Cat B";
+    string zS = "Mouse C";
+
+    int xd = abs(z-x);
+    int yd = abs(z-y);
+
+    if (xd == yd) return zS;
+    if (xd < yd) return xS;
+    if (xd > yd) return yS;
+    return "";
+}
 
 ////////////////// DRIVER
 int main() {
@@ -448,7 +465,7 @@ int main() {
     // isReverseNumber(5005);
 
 
-
+/*
     // [here]
     //6258
     // struct node *h1;
@@ -480,6 +497,11 @@ int main() {
 
 
     cout << sumLinkedList(h1, h2) << endl;
+*/
+
+    // cats and mouse
+    cout << catAndMouse(2,5,4) << endl;
+
 
 
 
