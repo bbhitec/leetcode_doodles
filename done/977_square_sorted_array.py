@@ -15,8 +15,7 @@
 '''
 
 
-#
-#
+# sub: 96T 77S
 class Solution:
     def sortedSquares(self, nums: [int]) -> [int]:
         squares = []
