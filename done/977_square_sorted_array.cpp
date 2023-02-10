@@ -1,20 +1,16 @@
 /**
     @author [mst]
-    @file   2169_count_op_zero.cpp
-    @brief  title or quick description
+    @brief  leetcode problems series
     977_square_sorted_array
     Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
 
-    Gains:
+    gains:
     -simple python array manipulation
     -built in sorting, iterators
     -basic lambda functions
     -cpp for_each
 
-    features, changelog:
-    -2021.04: -initial draft. accepted with 8.28% faster 6.52% less memory
-
-    @version 0.1 2022.04
+    @version 0.1 2023.02
 */
 
 

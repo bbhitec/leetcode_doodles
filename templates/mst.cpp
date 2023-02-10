@@ -1,19 +1,17 @@
 /**
     @author [mst]
-    @file   <filename>.<extension>
     @brief  title or quick description
     full/optional description: this is a placeholder
     template for new files creation
 
 
-    Gains:
+    gains:
     -
 
     features, changelog:
-    -2022.11:	-initial draft
-				[wip][here] indicate optional miscompletion
+    -2023.02:	-initial draft
 
-    @version 0.1 2022.11
+    @version 0.1 2023.02
 */
 
 
