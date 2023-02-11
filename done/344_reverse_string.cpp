@@ -1,14 +1,12 @@
 /**
     @author [mst]
     @brief  leetcode problems series
-    977_square_sorted_array
+    344_reverse_string
     Write a function that reverses a string. The input string is given as an array of characters s.
     You must do this by modifying the input array in-place with O(1) extra memory.
 
     gains:
-
-
-    features, changelog:
+    -basic pointer operation
 
     @version 0.1 2023.02
 
