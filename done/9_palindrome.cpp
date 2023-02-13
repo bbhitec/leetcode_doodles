@@ -7,8 +7,8 @@ leetcode problems series
 	Follow up: Could you solve it without converting the integer to a string?
 
 Gains:
-- cpp simple string manipulation
-- algorithmic: concatenating numbers
+-cpp simple string manipulation
+-algorithmic: concatenating numbers, reversing a number
 
 
 features, changelog:
@@ -25,7 +25,35 @@ using namespace std;
 
 ////////////////// DECL_IMPL
 
+// converting to vector and comparing from edges
+//
+// sub: 9T 7S :(
 class Solution {
+public:
+	bool isPalindrome(int x) {
+		if (x == 0) return true;
+		if (x < 0) return false;
+
+		vector<int> vec;
+
+		while (x) {
+			vec.push_back(x%10);
+			x/=10;
+		}
+
+		// // test print
+		// for (auto d : vec) cout << d << ", ";
+
+		int l = 0;
+		int r = vec.size()-1;
+
+		while (l<r) if (vec[l++] != vec[r--]) return false;
+
+		return true;
+	}
+};
+
+class Solution0 {
 public:
 	bool isPalindrome(int x) {
 		if (x == 0) return true;
@@ -81,14 +109,11 @@ int main()
 {
 	cout << "[mst] leetcode 9. palindrome problem" << endl << endl;
 
-	SolutionLeet sol;
-	//Solution sol;
-	int x = 13221;
+	Solution sol;
+	int x = 13231;
 
 	bool ok = sol.isPalindrome(x);
 	cout << "the number: " << x << " is" << ((ok)?" ":" not ") << "a palindrome" << endl << endl;
 
-	// system("pause");    // [mst][demo] this is not portable!!
-	cin.get(); // pseudo-pause the console
 	return 0;
 }
