@@ -432,6 +432,8 @@ int findMergeNode(SinglyLinkedListNode* head1, SinglyLinkedListNode* head2) {
     SinglyLinkedListNode *la = head1;
     SinglyLinkedListNode *sm = head2;
     int l1=0,l2=0;
+
+    // calculate lengths difference
     while(head1!=NULL) {
         l1++;
         head1 = head1->next;
@@ -451,6 +453,7 @@ int findMergeNode(SinglyLinkedListNode* head1, SinglyLinkedListNode* head2) {
         sm = head1;
     }
     int f = 0;
+
     l1 = abs(l1-l2);
     for (int i = 0; i < l1; i++) {
         la = la->next;
@@ -464,7 +467,6 @@ int findMergeNode(SinglyLinkedListNode* head1, SinglyLinkedListNode* head2) {
         sm = sm->next;
     }
     return f;
-
 }
 
 
@@ -478,6 +480,25 @@ int divisibleSumPairs(int n, int k, vector<int> ar) {
         }
     }
     return count;
+}
+
+
+vector<int> circularArrayRotation(vector<int> a, int k, vector<int> queries) {
+    int n = a.size();
+    k = k % n;
+    vector<int> res;
+    
+    int idx = 0;
+
+    // calculare a would-be rotated index for each query
+    for (auto it = queries.begin(); it!=queries.end();it++) {
+        idx = *it;
+        idx -= k;
+        if (idx <0) idx += n;
+        res.push_back(a[idx]);
+    }
+    
+    return res;
 }
 
 ////////////////// DRIVER
@@ -560,8 +581,13 @@ int main() {
 */
 
     // cats and mouse
-    cout << catAndMouse(2,5,4) << endl;
+    // cout << catAndMouse(2,5,4) << endl;
 
+    // Circular Array Rotation
+    vector<int> nums = {1,2,3};
+    int k = 2;
+    vector<int> q = {0,1,2};
+    vector<int>res = circularArrayRotation(nums,k,q);
 
 
 
