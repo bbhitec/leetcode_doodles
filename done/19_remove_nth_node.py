@@ -51,6 +51,8 @@ class Solution:
         b = head
 
         while tail.next:
+            # approach the tail, adnvance the node-to-delete pointer
+            # only a needed amount of times
             if n>1:
                 n = n-1
             else:

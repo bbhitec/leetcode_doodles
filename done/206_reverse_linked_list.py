@@ -7,8 +7,8 @@
     Given the head of a singly linked list, reverse the list, and return the reversed list.
 
     gains:
-    - recursive thinking
-    - python classes and pointers
+    -recursive thinking
+    -python classes and pointers
 
     features, changelog:
     -2022.11: -submission
