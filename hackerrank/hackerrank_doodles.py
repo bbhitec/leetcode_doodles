@@ -157,6 +157,14 @@ def print_rangoli(n):
 
     print('\n'.join(L[:0:-1]+L))
 
+
+def coin_change(n,c):
+    n_perms = [1]+[0]*n
+    for coin in c:
+        for i in range(coin, n+1):
+            n_perms[i] += n_perms[i-coin]
+    return n_perms[n]
+
 ################## DRIVER
 def main():
 
@@ -170,7 +178,11 @@ def main():
 
     # py_lists()
     # count_substring()
-    print_rangoli(5)
+    # print_rangoli(5)
+
+    # coin change problem
+    n, c = 4, [1,2,3]
+    print (coin_change(n,c))
 
 
 

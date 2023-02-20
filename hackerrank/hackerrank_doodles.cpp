@@ -487,7 +487,7 @@ vector<int> circularArrayRotation(vector<int> a, int k, vector<int> queries) {
     int n = a.size();
     k = k % n;
     vector<int> res;
-    
+
     int idx = 0;
 
     // calculare a would-be rotated index for each query
@@ -497,7 +497,7 @@ vector<int> circularArrayRotation(vector<int> a, int k, vector<int> queries) {
         if (idx <0) idx += n;
         res.push_back(a[idx]);
     }
-    
+
     return res;
 }
 
