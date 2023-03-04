@@ -8,7 +8,7 @@
 	You must solve the problem without using any built-in functions in O(nlog(n)) time complexity and with the smallest space complexity possible.
 
     gains:
-    -smerge sorting algorithm in cpp
+    -merge sorting algorithm in cpp
 
 
     @version 0.1 2023.02
@@ -42,9 +42,9 @@ private:
 
 	void merge(vector<int> &A, int l, int m, int r) {
 		vector<int> sorted(r - l + 1);
-		int k = 0;	   
-		int i = l;	   
-		int j = m + 1; 
+		int k = 0;
+		int i = l;
+		int j = m + 1;
 
 		while (i <= m && j <= r)
 			if (A[i] < A[j])

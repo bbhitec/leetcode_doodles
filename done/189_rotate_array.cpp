@@ -39,7 +39,7 @@ public:
         reverse(arr,0,n-k-1);
         reverse(arr,0,n-1);
         return;
-	} 
+	}
 };
 
 
@@ -90,7 +90,7 @@ public:
         int sz = nums.size();
         k = k % sz;
 
-        int tmp;        
+        int tmp;
         while(k--) {
             tmp = nums.back();
             nums.pop_back();
