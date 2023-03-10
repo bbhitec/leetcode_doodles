@@ -39,9 +39,8 @@ public:
 		// if number of piles equals the hours, we have to eat at maximal rate
 		if (h == sz) return r;
 
-		// [here][wip] run here and settle the boundaries
 		while (l<r) {
-			int k = (r+l)/2; // [here]
+			int k = (r+l)/2;
 			if (hoursToEat(piles, k) <= h) {
 				r = k;
 			} else {
