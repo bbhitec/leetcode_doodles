@@ -75,7 +75,7 @@ void addTailList(ListNode* &head, int val) {
     ptr->next = NewNode;
 }
 
-// 
+//
 // sub: 95t 31s
 class Solution {
 public:
