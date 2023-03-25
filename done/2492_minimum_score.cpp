@@ -24,6 +24,7 @@
 #include <iostream>            // usage of console prints
 #include <vector>
 #include <queue>
+#include <unordered_map>        // usage for adjacency list
 using namespace std;
 
 
@@ -33,7 +34,7 @@ using namespace std;
 // snipped
 //
 // sub: 92 72
-class Solution {
+class Solution0 {
 public:
     int minScore(int n, vector<vector<int>> &roads) {
         int ans = INT_MAX;
@@ -52,6 +53,7 @@ public:
             graph[v].emplace_back(u, distance); // [bp] bi-directional graph
         }
 
+        // [bp] iterative neightbors traversal
         while (!q.empty()) {
             const int u = q.front();    // take first node
             q.pop();
@@ -69,6 +71,52 @@ public:
         return ans;
     }
 };
+
+// Since it is given that every vertex is connected, we basically just need to find the lowest valued edge in the graph.
+// We convert the given graph representation to an adjacency list and perform a DFS while noting the minimal-valued edge
+// hints based on neat code solution
+//
+// sub 55 54
+class Solution {
+private:
+    int minimal = INT_MAX;  // have the absolute minimal as a property
+    vector<bool> visited;
+
+    void dfs (unordered_map<int,vector<pair<int, int>>> &adj, int v) {
+        if (visited[v]) return;
+        visited[v] = true;
+
+        for (const auto neighbor : adj[v]) {
+            if (neighbor.second < minimal) minimal = neighbor.second;   // .second is distance
+            dfs(adj, neighbor.first);   // .first is the neighbor
+        }
+        return;
+    }
+
+public:
+    int minScore(int n, vector<vector<int>> &roads) {
+
+        // make an adjacency list for dfs
+        unordered_map<int,vector<pair<int, int>>> adj(n);
+        for (vector<int> &edge : roads) {
+            int u = edge[0] - 1; // align to a 0 based numbering
+            int v = edge[1] - 1;
+            int d = edge[2];
+            adj[u].emplace_back(v, d);
+            adj[v].emplace_back(u, d); // [bp] bi-directional graph
+        }
+
+        // prepare the visited vertices list
+        visited.clear();
+        visited.resize(n);
+
+        // run the DFS, it doesn't matter what end of the graph to start from
+        dfs(adj, 0);
+        return minimal;
+    }
+};
+
+
 
 ////////////////// DRIVER
 int main() {
