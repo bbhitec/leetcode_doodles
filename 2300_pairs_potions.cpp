@@ -1,0 +1,76 @@
+/**
+    @author [mst]
+    @brief  leetcode series
+    2300_pairs_potions
+    ...
+    gains:
+    -[wip]
+
+
+    @version 0.1 2023.03
+*/
+
+
+
+////////////////// LIBS
+#include <iostream>            // usage of console prints
+#include <vector>
+#include <algorithm>    // usage of sort
+using namespace std;
+
+
+////////////////// DECL_IMPL
+
+
+// snipped
+//
+// sub: 72 63
+class Solution
+{
+public:
+    vector<int> successfulPairs(vector<int> &spells, vector<int> &potions,
+                                long long success)
+    {
+        vector<int> ans;
+        sort(begin(potions), end(potions));
+
+        for (const int spell : spells)
+            ans.push_back(potions.size() -
+                          firstIndexSuccess(spell, potions, success));
+
+        return ans;
+    }
+
+private:
+    // First index i s.t. spell * potions[i] >= success
+    int firstIndexSuccess(int spell, const vector<int> &potions,
+                          long long success)
+    {
+        int l = 0;
+        int r = potions.size();
+        while (l < r)
+        {
+            const int m = (l + r) / 2;
+            if (static_cast<long long>(spell) * potions[m] >= success)
+                r = m;
+            else
+                l = m + 1;
+        }
+        return l;
+    }
+};
+
+////////////////// DRIVER
+int main()
+{
+    Solution s;
+
+
+    vector<int> arr = {2,3,4,7,11};
+    int k = 5;
+    int res = s.findKthPositive(arr,k);
+    cout << res;
+
+
+    return 0;
+}
