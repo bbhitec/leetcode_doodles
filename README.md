@@ -2,6 +2,7 @@
 
 ## About
 Various solutions and exercises for leetcode interview prep problems<br>
+Now includes also various solutions for other training resources as: Hacker Rank, FreeCodeCamp etc.
 
 #### Methodology and Mindset
 - Don't invest too much or too little in each problem
@@ -12,20 +13,23 @@ Various solutions and exercises for leetcode interview prep problems<br>
 - When learning a new language, go over some easy/familiar problems
 
 
-### Repo condition
-![medium](https://img.shields.io/badge/medium&nbsp;clean-80-orange)
-
 
 ## Gains
 - Methodical: Algorithms implementation, Problem solving
-- Technical: Best practices and familiarity towards the used languages: Python, Cpp
+- Technical: Best practices and familiarity with the languages used: Python, Cpp
 ### Other Gains
 - Documentation, consistent commenting
 - Code running time measurement
+- Complexity analysis
 ### Skills stack
 ![python](https://img.shields.io/badge/python-v3-yellow)
 ![cpp](https://img.shields.io/badge/c%2B%2B-11%20-blue)
+<br>
+![html](https://img.shields.io/badge/html-5%20-red)
+![css](https://img.shields.io/badge/css-3%20-blue)
+<br>
 ![computer science algorithms](https://img.shields.io/badge/algorithms-%20-lightgrey)
+![best practices](https://img.shields.io/badge/best%20practices-%20-lightgrey)
 <br><br>
 
 
