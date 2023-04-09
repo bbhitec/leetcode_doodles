@@ -7,7 +7,8 @@
     Given num, the array-form of an integer, and an integer k, return the array-form of the integer num + k.
 
     gains:
-    -
+    -some cpp iterators goodies
+    -dismantling addition
 
     @version 0.1 2023.02
 */
@@ -35,27 +36,28 @@ public:
         int sum = 0;
         int d = 0;
         int num_d = 0;
-        bool in_num=true;
+        bool in_num=true;   // are we iterating over the num(array) digits?
 
         // [demo] reverse iteration
         auto it = num.rbegin();
         while (in_num || k) {
-            d = k%10;
-            k = k/10;
+            d = k%10;   // cut a digit
+            k = k/10;   // trim the number
             num_d = (in_num)?*it:0;
 
             sum = num_d + d + carry;
-            carry = sum/10;
+            carry = sum/10; // deduct the carry
 
-            res.push_front(sum%10);
+            res.push_front(sum%10); // record resulting digit
 
             it++;
             if (it == num.rend()) in_num = false;
         }
 
-        // handle leftovers
+        // handle leftover carry
         if (carry) res.push_front(1);
 
+        // [demo] return data by means of iterators
         return {res.begin(),res.end()};
     }
 };
