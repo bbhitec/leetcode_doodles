@@ -22,14 +22,14 @@ Now includes also various solutions for other training resources as: Hacker Rank
 - Code running time measurement
 - Complexity analysis
 ### Skills stack
-![python](https://img.shields.io/badge/python-v3-yellow)
-![cpp](https://img.shields.io/badge/c%2B%2B-11%20-blue)
+![python](https://img.shields.io/badge/-python-yellow)
+![cpp](https://img.shields.io/badge/-c%2B%2B-blue)
+![java](https://img.shields.io/badge/-java-red)
+![html](https://img.shields.io/badge/-html-red)
+![css](https://img.shields.io/badge/-css-blue)
 <br>
-![html](https://img.shields.io/badge/html-5%20-red)
-![css](https://img.shields.io/badge/css-3%20-blue)
-<br>
-![computer science algorithms](https://img.shields.io/badge/algorithms-%20-lightgrey)
-![best practices](https://img.shields.io/badge/best%20practices-%20-lightgrey)
+![computer science algorithms](https://img.shields.io/badge/-algorithms-grey)
+![best practices](https://img.shields.io/badge/-best%20practices-grey)
 <br><br>
 
 
