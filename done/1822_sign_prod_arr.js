@@ -30,6 +30,8 @@ var signFunc = function(x) {
 
 
 // we use reduce to calculate a product of nums. we use the sign function to avoid integer overflowing
+//
+// sub 55 99
 var arraySign = function(nums) {
     const prod = nums.reduce((n, acc) => signFunc(n) * acc ,1);
     return prod;

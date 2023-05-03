@@ -25,6 +25,7 @@ Now includes also various solutions for other training resources as: Hacker Rank
 ![python](https://img.shields.io/badge/-python-yellow)
 ![cpp](https://img.shields.io/badge/-c%2B%2B-blue)
 ![java](https://img.shields.io/badge/-java-red)
+![javascript](https://img.shields.io/badge/-javascript-red)
 ![html](https://img.shields.io/badge/-html-red)
 ![css](https://img.shields.io/badge/-css-blue)
 <br>
