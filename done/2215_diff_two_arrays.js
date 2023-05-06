@@ -24,9 +24,9 @@
  * @param {number[]} nums1
  * @param {number[]} nums2
  * @return {number[][]}
- * 
+ *
  * simply build sets oyut of the arrays and then construct the desired answer
- * 
+ *
  * sub: 76 75
  */
 var findDifference = function(nums1, nums2) {
