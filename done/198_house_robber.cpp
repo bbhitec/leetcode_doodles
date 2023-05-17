@@ -20,11 +20,12 @@ using namespace std;
 
 ////////////////// DECL_IMPL
 
-// a backtracking solution:
-// at each stage of a given vector: pop the first member,
-// permute the rest of the vector and then add the member back to each result
+// hold two dp variables:
+// one for the score of robbing current house and the ones after the neighbor and
+// one for the score of not robbing current house but all from the adjacent
+// the current score is the max of the above
 //
-// sub
+// sub 100 97
 class Solution {
 public:
     int rob(vector<int>& nums) {
