@@ -25,9 +25,9 @@ using namespace std;
 
 
 // snipped
-// builkd mismatches vector and check that indexes are swapable
+// build mismatches vector and check that indexes are swapable
 //
-// sub 5452
+// sub 54 52
 class Solution {
 public:
     bool buddyStrings(string s, string goal) {

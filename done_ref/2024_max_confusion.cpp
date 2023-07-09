@@ -9,7 +9,7 @@
 
     gains:
     -sliding window with modifications counter
-    -[wip] poligh the window borders logic
+    -[wip] polish the window borders logic
 
     @version 0.1 2023.07
 */
