@@ -28,6 +28,7 @@ using namespace std;
 // iterative bottom-up memoization dp solution
 //
 // sub: 41T 77S
+// sub 2023.11: 100T 86S by removing the basic case ifs
 class Solution {
 public:
     int tribonacci(int n) {
@@ -36,10 +37,6 @@ public:
         memo[0] = 0;
 		memo[1] = 1;
 		memo[2] = 1;
-
-        if (0 == n) return 0;
-        if (1 == n) return 1;
-        if (2 == n) return 1;
 
         // run a 'pseudo' recursion while memoizing all calculated values
         for (int i = 3; i <= n; i++) {
