@@ -18,10 +18,6 @@
 
 ////////////////// LIBS
 #include <iostream>     // usage of console prints
-#include <vector>
-#include <algorithm>    // usage of sort
-#include <cstring>      // use of memset
-#include <numeric>      // use of accumulate
 using namespace std;
 
 
