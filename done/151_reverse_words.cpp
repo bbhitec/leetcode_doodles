@@ -45,13 +45,13 @@ private:
 
     while (i < n) {
       while (
-        i < j || 
-        i < n && 
+        i < j ||
+        i < n &&
         s[i] == ' ') // Skip the spaces.
         ++i;
       while (
-        j < i || 
-        j < n && 
+        j < i ||
+        j < n &&
         s[j] != ' ') // Skip the spaces.
         ++j;
       reverse(s.begin() + i, s.begin() + j); // Reverse the word.
