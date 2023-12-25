@@ -8,7 +8,8 @@
   Return a string of the words in reverse order concatenated by a single space.
 
   gains:
-  -
+  -basic string streams
+  -string manipulations
 
 
   @version 2023.12
