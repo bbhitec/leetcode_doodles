@@ -69,13 +69,16 @@ private:
 ////////////////// DRIVER
 int main()
 {
-    Solution s;
+    BrowserHistory bh("www.home.com");
+    cout << "visited home\n";
+
+    bh.visit("www.youtube.com");
+    bh.visit("www.facebook.com");
+    bh.visit("www.instagram.com");
+
+    cout << (bh.back(1));
 
 
-    vector<int> arr = {2,3,4,7,11};
-    int k = 5;
-    int res = s.findKthPositive(arr,k);
-    cout << res;
 
 
     return 0;
