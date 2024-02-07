@@ -2,6 +2,7 @@
  [mst] 20_valid_parentheses.py
  leetcode problems series
     20. Valid Parentheses
+    easy
     Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
     An input string is valid if:
     -Open brackets must be closed by the same type of brackets.
@@ -53,7 +54,7 @@ class Solution:
             return True
         return False
 
-# solution from leetcode. same idea wiht cleaner syntax 25% time 72% space
+# solution from leetcode. same idea with cleaner syntax 25% time 72% space
 # I think the condition to pop is saving resources
 class Solution2:
     def isValid(self, s: str) -> bool:
@@ -80,9 +81,6 @@ def main():
 
     sol = Solution()
     sol2 = Solution2()
-
-    opcl = dict(('()', '[]', '{}'))
-    print(opcl)
 
     # testing
     print (sol.isValid("("))
