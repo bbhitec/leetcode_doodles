@@ -2,15 +2,16 @@
     @author [mst]
     @brief  leetcode problems series
     438_find_all_anagrams
+    medium
     Given two strings s and p, return an array of all the start indices of p's anagrams in s. You may return the answer in any order.
 	An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
 	gains:
 	-cpp strings/char manipulations
-	-sliding window and histogram compination
+	-sliding window and histogram combination
 
     features, changelog:
-    -[wip] an option to a string/substring based window solution
+    -[next] an option to a string/substring based window solution
     -2023.02:	-initial draft
 
     @version 0.1 2023.02

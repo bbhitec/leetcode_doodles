@@ -1,19 +1,19 @@
-package done;
+// package done;
 
 /**
- * @author [mst]
+ *  @author [mst]
+ *  @brief  leetcode problems series
+ *  438_find_all_anagrams
+ *  Given two strings s and p, return an array of all the start indices of p's anagrams in s. You may return the answer in any order.
+ *  An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
  *
- * title or quick description
+ *  gains:
+ *  -java strings/char manipulations
+ *  -sliding window and histogram combination
+ *  [next]
+ *  -build java template and run tools?
  *
- * full/optional description: this is a placeholder
- * template for new files creation
- *
- * gains:
- * -[wip] build java template and run tools
-[wip] do the same for go
- *
- * @since 2023.02
- * @version 0.1
+ *  @version 2023.02
  **/
 
 ////////////////// LIBS
@@ -24,6 +24,8 @@ import java.util.ArrayList;
 
 ////////////////// DECL_IMPL
 
+// build a sliding window for an anagram check at each index of the target string
+// this can be considered an expansion of 242_valid_anagram problem
 class Solution {
     // good practice to define constant
     public static final int MAX = 256;
@@ -76,7 +78,7 @@ class Solution {
         String s = "cbaebabacd", p = "abc";
 		List<Integer> res = findAnagrams(s,p);
 
-        System.out.printf("result for:%s and:%s %n", s,p);
+        System.out.printf("result for: %s and: %s %n", s,p);
 		for (Integer i : res)
 			System.out.println(i);
 	}
