@@ -3,6 +3,7 @@
     @author [mst]
     @brief  leetcode problems series
     203_remove_list_elements
+    easy
 
     gains:
     -basic list navigation
@@ -49,7 +50,7 @@ class Solution2:
         if(head==None):
             return head
 
-       #assign head to temp head and prev_head
+        #assign head to temp head and prev_head
         temp_head = head
         prev_head = head
 
@@ -129,7 +130,7 @@ class Solution1:
 
         current = head
 
-        # second loop - iterate whgile cutting upcoming matches
+        # second loop - iterate while cutting upcoming matches
         while current:
             while current and current.next and current.next.val == val:
                 current.next = current.next.next

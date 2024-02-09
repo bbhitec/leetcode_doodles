@@ -2,6 +2,7 @@
     @author [mst]
     @brief  title or quick description
 	189_rotate_array
+    medium
     Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
     gains:
@@ -22,7 +23,7 @@ using namespace std;
 
 ////////////////// DECL_IMPL
 
-// snipped: using the reversing: last k elenments, then the first k elements, then the all
+// snipped: using the reversing: last k elenments, then the first k elements, then all of them
 //
 // sub: 78T 61S
 class Solution {

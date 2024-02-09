@@ -8,7 +8,7 @@
     return the reversed list.
 
     gains:
-    -medium-advanced linke list operation in cpp
+    -medium-advanced linked list operations in cpp
 
     @version 2023.02
 */
@@ -77,7 +77,7 @@ void addTailList(ListNode* &head, int val) {
 }
 
 // simple pointer action to revrse linked list
-// there is alsa a by-value range-reverse
+// there is also a by-value range-reverse
 //
 // sub: 31t 23s
 class Solution {
@@ -119,37 +119,36 @@ public:
 
     ListNode* reverseBetween(ListNode* head, int left, int right) {
         if (left == right) return head;
-        if (head) {
-            ListNode* curr = head;
-            ListNode* next;
-            ListNode* last = head;
-            ListNode* start = head;
-            ListNode* prev = head;
-            int rev_at_start = (left == 1);
+        if (!head) return nullptr;
 
-            // advance to left boundary
-            while (left-- > 1) {
-                last = curr;        // connection to the original list
-                curr = curr->next;
-                right--;
-            }
-            start = curr;
-            prev = last;
+        ListNode* curr = head;
+        ListNode* next;
+        ListNode* last = head;
+        ListNode* start = head;
+        ListNode* prev = head;
+        int rev_at_start = (left == 1);
 
-            while (right-- > 0){
-                next = curr->next;  // prep forward
-                curr->next = prev;  // link back
-                prev = curr;        // relocate new head
-                curr = next;        // advance
-            }
-
-            // final reconnection
-            start->next = curr;
-            if (rev_at_start) return prev;
-            else last->next = prev;
-            return head;
+        // advance to left boundary
+        while (left-- > 1) {
+            last = curr;        // connection to the original list
+            curr = curr->next;
+            right--;
         }
-        return nullptr;
+        start = curr;
+        prev = last;
+
+        while (right-- > 0){
+            next = curr->next;  // prep forward
+            curr->next = prev;  // link back
+            prev = curr;        // relocate new head
+            curr = next;        // advance
+        }
+
+        // final reconnection
+        start->next = curr;
+        if (rev_at_start) return prev;
+        else last->next = prev;
+        return head;
     }
 };
 
