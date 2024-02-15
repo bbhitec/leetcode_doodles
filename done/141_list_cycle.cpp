@@ -1,7 +1,7 @@
 /**
     @author [mst]
     @brief  leetcode problems series
-	92_reverse_linked_list2
+	141_list_cycle
     Given head, the head of a linked list, determine if the
     linked list has a cycle in it.
     There is a cycle in a linked list if there is some node

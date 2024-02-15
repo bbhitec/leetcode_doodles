@@ -20,8 +20,8 @@
 ////////////////// DECL_IMPL
 
 
-// sliding window approach: run the sting once while keeping a window/range from last occured char
-// return themaximal window size once the string is traversed
+// sliding window approach: run across the string once while keeping a window/range from last occured char
+// return the maximal window size once the string is traversed
 //
 // sub: 73 79
 var lengthOfLongestSubstring = function(x) {
