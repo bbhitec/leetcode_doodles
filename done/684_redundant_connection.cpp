@@ -33,10 +33,9 @@ void print_vec(vector<int> vec) {
 };
 
 
-// union find approach: keep a rank (connected union size) and a parent arrays for each node
-// for each edge, chech if both nodes connected to the same union (i.e. same parent)
-// otherwise connect to a higher ranked node and updating the rank as you go
-// which means the nodes are connected
+// union find approach: keep a rank (connected union size) and a parent arrays for each
+// edge, check if both nodes connected to the same union (i.e. same parent) to find the redundand edge
+// otherwise merge the nodes (connect lower ranked node to a higher ranked node) as you go.
 //
 // sub 100 26
 class Solution {
