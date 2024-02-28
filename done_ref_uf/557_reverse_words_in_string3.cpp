@@ -5,7 +5,7 @@
     Given a string s, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
 
     gains:
-    -simple cpp sting manipulation
+    -simple cpp string manipulation
 
 
     @version 0.1 2023.06

@@ -58,7 +58,7 @@ class Solution150 {
 
 class Driver {
     public static void main(String[] args) {
-        System.out.println("[mst] leetcode doodles");
+        System.out.println("[mst] leetcode doodles: 150");
 
         Solution150 s = new Solution150();
 
