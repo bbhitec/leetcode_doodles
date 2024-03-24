@@ -20,8 +20,6 @@ using namespace std;
 
 ////////////////// DECL_IMPL
 
-////////////////// DECL_IMPL
-
 // Definition for singly-linked list.
 struct ListNode {
     int val;

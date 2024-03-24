@@ -21,7 +21,7 @@ using namespace std;
 
 ////////////////// DECL_IMPL
 
-
+// binary tree util class
 class TreeNode {
 private:
 
@@ -84,50 +84,6 @@ public:
 			return left->find(val);
 		}
 	}
-
-	// used in leetcode 226, a recursive tree inversion
-	TreeNode* invertTree(TreeNode* root){
-		// stopping condition: we are at the leaf
-		if (root == nullptr){
-			return root;
-		}
-
-		TreeNode* left = invertTree(root->left);	// this will traverse down to the leaves and keep nodes in the stack for inversion
-		TreeNode* right = invertTree(root->right);
-
-		root->left = right;	// the actual re-routing of the nodes
-		root->right = left;
-
-		return root;
-	}
-
-	// [here] use https://www.geeksforgeeks.org/inorder-successor-in-binary-search-tree/ to complete
-	// In Binary Tree, Inorder successor of a node is the next node in Inorder traversal of the Binary Tree.
-	// Inorder Successor is NULL for the last node in Inorder traversal.
-	// used in leetcode 285 [here] also, consider a version with a parent pointer type of nodes
-	int inOrderSuccessor (int val) {
-		// reached a leaf (int not found)
-		if (this == nullptr) {
-			return -1;
-		}
-
-		// value found - indicate that spotted
-		if (val == this->val) {
-			if (this->right) return this->right->val;
-			return -2;
-		}
-		int res;
-		if (val > this->val) {
-			res = right->inOrderSuccessor(val);
-			if (res == -2) return this->val;
-			return res;
-		} else {
-			res = left->inOrderSuccessor(val);
-			if (res == -2) return this->val;
-			return res;
-		}
-	}
-
 };
 
 // recursive dfs approach: use a post-order approach while taking
