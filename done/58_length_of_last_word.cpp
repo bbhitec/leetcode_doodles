@@ -6,6 +6,7 @@
     A word is a maximal substring consisting of non-space characters only.
 
     gains:
+    - basic arrays logic
 
 
     @version 2024.04
@@ -27,23 +28,23 @@ using namespace std;
 
 
 
-// to be rd
-// assisted
+// run a pointer from the end of the string with conditions to count the word
 //
-// sub
+// sub  100 57
 class Solution {
 public:
     int lengthOfLastWord(string s) {
-      int max_len = 0;
-      int p = s.length()-1;
+        int max_len = 0;
+        int p = s.length()-1;
 
-      // ignore empty spaces;
-      while (s[p] != ' ') p--;
+        // ignore empty spaces;
+        while (s[p] == ' ') p--;
 
-      // count the last word only
-      while (s[p--] != ' ') max_len++;
+        // count the last word only
+        while (p >= 0 && s[p--] != ' ')
+            max_len++;
 
-      return max_len;
+        return max_len;
     }
 };
 
@@ -51,7 +52,7 @@ public:
 int main()
 {
     Solution s;
-    string str = "Hello world";
+    string str = " ";
 
     int res = s.lengthOfLastWord(str);
     cout << res;
