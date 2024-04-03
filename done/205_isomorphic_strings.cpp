@@ -52,7 +52,7 @@ public:
 	}
 };
 
-// snipped clean community solution
+// assisted clean community solution
 class Solution {
 public:
     public:
