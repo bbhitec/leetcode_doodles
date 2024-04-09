@@ -21,26 +21,26 @@ using namespace std;
 
 ////////////////// DECL_IMPL
 
- struct TreeNode {
-     int val;
-     TreeNode *left;
-     TreeNode *right;
-     TreeNode() : val(0), left(nullptr), right(nullptr) {}
-     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- };
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+};
 
 
 // basic recursive traversal
 //
-// sub 40 15
+// sub 60 33
 class Solution {
 public:
     int minDepth(TreeNode* root) {
         // stopping conditions
         if (root == nullptr) return 0;  // empty bst
         if (root->left == nullptr) return 1 + minDepth(root->right);   // left leaf
-        if (root->right == nullptr) return 1 + minDepth(root->left);   // left leaf
+        if (root->right == nullptr) return 1 + minDepth(root->left);   // right leaf
 
         return 1 + min(
             minDepth(root->left),
