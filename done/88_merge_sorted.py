@@ -22,7 +22,7 @@
 '''
 
 # simple O(n) solution: traverse each sorted array together and
-# decide which member shoul be merged at current index
+# decide which member should be merged at the current index
 #
 # sub: 91%T 86%S
 class Solution:
@@ -55,6 +55,7 @@ class Solution:
         nums1 = nums
 
         print(f"{nums=}")
+
 
 
 ################## DRIVER
