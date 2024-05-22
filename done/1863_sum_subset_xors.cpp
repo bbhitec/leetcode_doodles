@@ -35,7 +35,7 @@ using namespace std;
 // partially assisted
 //
 // sub 68 83
-class Solution {
+class Solution1 {
 private:
     // we use this helper method to present our own index-enabled prototype
     int rec(vector<int>& nums, int i, int sum) {
@@ -49,6 +49,31 @@ private:
 public:
     int subsetXORSum(vector<int>& nums) {
       return rec(nums, 0, 0);
+    }
+};
+
+
+// math based approach: looking at the bit wise representation, the nature of a xor will have 2^(n-1) bits active if at least one of the numbers has that bit
+// thus, we logical-or all the bits on 'nums' (we only care if there is at least one bit turned on) and count the bits appearance (2^n-1 for each turned bit, or the sum << (n-1)
+// assisted
+//
+// sub 100 88
+class Solution2 {
+public:
+    int subsetXORSum(vector<int>& nums) {
+      int res = 0;
+      for (auto& x: nums) res |= x;
+      return res << nums.size() - 1;
+    }
+};
+
+// same as the math version but using c++20 accumulate
+//
+// sub 100 88
+class Solution {
+public:
+    int subsetXORSum(vector<int>& nums) {
+      return accumulate(nums.begin(), nums.end(), 0, bit_or<>()) << nums.size() - 1;
     }
 };
 
