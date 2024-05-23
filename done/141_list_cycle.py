@@ -36,6 +36,26 @@ def make_list(nums):
 
     return head
 
+
+def append(self, lst: ListNode, value) -> ListNode:
+        if not lst:
+            return ListNode(value)
+
+        p = lst
+        while p.next:
+            p = p.next
+        p.next = ListNode(value)
+
+        return lst
+
+def print_list(lst : ListNode):
+    while lst:
+        print(f"{lst.val} -> ", end='')
+        lst = lst.next
+    print("")
+
+
+
 # [demo] assisting function making a linked list out of a python list (array)
 def make_list_with_cycle(nums, pos):
     if not nums:
@@ -58,13 +78,6 @@ def make_list_with_cycle(nums, pos):
     print ("made a list with cycle")
 
     return head
-
-
-def print_list(lst : ListNode):
-    while lst:
-        print(f"{lst.val} -> ", end='')
-        lst = lst.next
-    print("")
 
 
 
@@ -98,16 +111,6 @@ class Solution:
 
 
 
-    def append(self, lst: ListNode, value) -> ListNode:
-        if not lst:
-            return ListNode(value)
-
-        p = lst
-        while p.next:
-            p = p.next
-        p.next = ListNode(value)
-
-        return lst
 
 
 
@@ -118,9 +121,8 @@ def main():
 
     # testing
     list1 = make_list_with_cycle([0,1,2,3], 1)
-    # list2 = make_list([1,3,4])
+
     print(sol.hasCycle(list1))
-    # print_list(list3)
 
 
 

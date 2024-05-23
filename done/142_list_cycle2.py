@@ -42,6 +42,30 @@ def make_list(nums):
 
     return head
 
+
+
+
+def print_list(lst : ListNode):
+    while lst:
+        print(f"{lst.val} -> ", end='')
+        lst = lst.next
+    print("")
+
+def append(self, lst: ListNode, value) -> ListNode:
+        if not lst:
+            return ListNode(value)
+
+        p = lst
+        while p.next:
+            p = p.next
+        p.next = ListNode(value)
+
+        return lst
+
+
+
+
+
 # [demo] assisting function making a linked list out of a python list (array)
 def make_list_with_cycle(nums, pos):
     if not nums:
@@ -66,43 +90,21 @@ def make_list_with_cycle(nums, pos):
     return head
 
 
-def print_list(lst : ListNode):
-    while lst:
-        print(f"{lst.val} -> ", end='')
-        lst = lst.next
-    print("")
-
-class Solution2:
-    def detectCycle(self, head: ListNode) -> ListNode:
-        if head is None:
-            return None
-
-        p = head
-        while p:
-            p2 = p
-            while p2:
-                p2 = p2.next
-                if p == p2:
-                    return p.val
-
-            p = p.next
-        return None
-
 
 # simple sliding-window solution:
 # we first run a slow and a fast pointers to detect a cycle
 # note: any None (nullptr) reference would mean an end of a list and so a lack of a cycle
 # once the cycle node is spotted, we run a pointer out of a head of the list to spot the cycle entry
 # 63% T 61 S
-class Solution:
+class Solution2:
     def detectCycle(self, head: ListNode) -> ListNode:
         if head is None:
             return None
 
         slow = head
         fast = head
-        entry = head
-        i = 0
+        entry = head # the node where the cycle begins (where the tail's next is pointing)
+        i = 0       # index of cycle start
 
         while (slow is not None) and (fast is not None):
             if slow.next:
@@ -117,23 +119,11 @@ class Solution:
                 while slow != entry:
                     slow = slow.next
                     entry = entry.next
-                    i = i + 1
+                    i = i + 1   # we can return either the node or the index
                 return i
 
         return None
 
-
-
-    def append(self, lst: ListNode, value) -> ListNode:
-        if not lst:
-            return ListNode(value)
-
-        p = lst
-        while p.next:
-            p = p.next
-        p.next = ListNode(value)
-
-        return lst
 
 
 
@@ -144,10 +134,10 @@ def main():
     sol = Solution()
 
     # testing
-    list1 = make_list_with_cycle([0,1,2,3], 1)
-    # list2 = make_list([1,3,4])
+    list1 = make_list_with_cycle([0,1,2,3,4,5], 2)
+    #print_list(list1)   # default printing func will infinite loop
+
     print(sol.detectCycle(list1))
-    # print_list(list3)
 
 
 
