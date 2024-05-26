@@ -34,11 +34,87 @@
 #include <iostream>            // usage of console prints
 #include <vector>
 #include <string>
+#include <limits>	// usage of max int limit
 
 using namespace std;
 
 
 ////////////////// DECL_IMPL
+
+// helper structs
+
+enum statusAtoi {OK, BAD_CHAR, OVERFLOW};
+
+struct result {
+	int num;
+	statusAtoi status;
+};
+
+// refrehser 2024.05
+// after GE interview. extras from the interview:
+//	-provide a way to communicate success/error status. error on bad char (weak condition, a up-till-now constructed number will be ok)
+//	-a means to effectively disqualify an int-overflowing string before the main loop?
+//
+// sub to leetcode not applicable
+class Solution {
+public:
+    result myAtoi(string s) {
+
+		result res;	// status struct
+		int i = 0;
+		int sign = 1;;
+
+		// skip spaces
+		while (s[i] == ' ')
+			i++;
+
+		// check sign
+		if(s[i] == '-') {
+			sign = -1;
+			i++;
+		} else if (s[i] == '+') {		// allow only a single sign symbol
+			i++;
+		}
+
+		// [next] can we check possible overflow here based on string length?
+		// if (s.size() - i + 1 > 10) {
+		// 	res.num = 0;
+		// 	res.status = OVERFLOW;
+		// 	return res;
+		// }
+
+
+		// process chars
+		double num = 0;
+		for (; i < s.size(); i++) {
+			char digit = s[i];
+			if (digit < '0' || digit > '9') {
+				res.num = (int)(num*sign);	// fill with the number composed so far...
+				res.status = BAD_CHAR;
+				return res;
+			}
+			num = (num*10) + (digit-'0');
+
+			// [bp] extra: check integer overflow
+			// if (num > INT_MAX + (sign == -1)) {
+			// 	res.num = (sign == -1)?(INT_MIN):(INT_MAX);
+			// 	res.status = OVERFLOW;
+			// 	return res;
+			// }
+
+			// [bp] another modern way to check overflow: if the next digit addition would be bigger than the limit
+			if (num > ((numeric_limits<int>::max() - digit) / 10)) {
+				res.num = (sign == -1)?(INT_MIN):(INT_MAX);
+				res.status = OVERFLOW;
+				return res;
+			}
+		}
+
+		res.status = OK;
+		res.num = (int)(num*sign);
+		return res;
+    }
+};
 
 // previous submission. not polished and obsolete
 class Solution1 {
@@ -92,7 +168,7 @@ public:
 };
 
 
-class Solution {
+class Solution2 {
 public:
 	// Implement atoi which converts a string to a 32-bit signed integer.
 	int myAtoi(string s) {
@@ -146,12 +222,12 @@ int main()
 {
 	std::cout << "[mst] leetcode 8. atoi" << endl << endl;
 
-	Solution1 sol;
+	Solution2 sol;
 	string inputs[] = {
-		"42",
-		"   -42",
-		"4193 with words",
-		"words and 987",
+		// "42",
+		// "   -42",
+		// "4193 with words",
+		// "words and 987",
 		"-91283472332",
 		"+1",
 		"+-12",
@@ -165,6 +241,13 @@ int main()
 		std::cout << "atoi(" << str << ")" << "=" << sol.myAtoi(str) << endl;
 	}
 
-	//std::cin.get(); // pseudo-pause the console
+	// refresher 2024.05
+	cout << "\n\n\n\n\n";
+	Solution sol2;
+	for (string str : inputs) {
+		result r = sol2.myAtoi(str);
+		std::cout << "atoi(" << str << ")" << "=" << r.num << " status: " << r.status << endl;
+	}
+
 	return 0;
 }
