@@ -21,7 +21,7 @@
 
 # Definition for a binary tree node. (taken from leetcode problems)
 class TreeNode:
-    def __init__(self, val=None, left=None, right=None):
+    def __init__(self, val=-1, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
@@ -64,7 +64,7 @@ class TreeNode:
 # simple preorder (root first, dfs) traversal
 #
 # sub: 38%T 95%S
-class Solution:
+class Solution1:
     def preorderTraversal(self, root):
         res = []
         self.dfs(root, res)
@@ -77,19 +77,67 @@ class Solution:
             self.dfs(root.right, res)
 
 
+# refresher 2024.05
+# summing up all simple traversal types
+class Solution:
+    def preorderTraversal(self, root):
+        res = []
+        self.preorder_rec(root, res)
+        return res
+
+    def preorder_rec(self, root, res):
+        if not root:
+            return
+        res.append(root.val)
+        self.preorder_rec(root.left, res)
+        self.preorder_rec(root.right, res)
+
+
+    def inorderTraversal(self, root):
+        res = []
+        self.inorder_rec(root, res)
+        return res
+
+    def inorder_rec(self, root, res):
+        if not root:
+            return
+        self.inorder_rec(root.left, res)
+        res.append(root.val)
+        self.inorder_rec(root.right, res)
+
+
+    def postorderTraversal(self, root):
+        res = []
+        self.postorder_rec(root, res)
+        return res
+
+    def postorder_rec(self, root, res):
+        if not root:
+            return
+        res.append(root.val)
+        self.postorder_rec(root.left, res)
+        self.postorder_rec(root.right, res)
+
+
 
 ################## DRIVER
 def main():
     sol = Solution()
 
-    root = []
+    # root = []
     # root = [1]
-    # root = [1,2,3]
+    root = [2,1,3]
 
     # testing
     head = TreeNode()
     head.insert_arr(root)
     res = sol.preorderTraversal(head)
+    print(f"{root=}, {res=}")
+
+    res = sol.inorderTraversal(head)
+    print(f"{root=}, {res=}")
+
+    res = sol.postorderTraversal(head)
     print(f"{root=}, {res=}")
 
 
